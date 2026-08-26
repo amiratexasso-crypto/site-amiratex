@@ -30,6 +30,7 @@
   <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
 
+    <!-- SECTION: TOPBAR -->
     <div class="topbar" role="contentinfo" aria-label="Informations de contact">
       <div class="container topbar-inner">
         <div class="topbar-left">
@@ -52,19 +53,19 @@
             +33 6 34 23 45 65
           </a>
 
-          <a href="mailto:contact@amiratex.com" aria-label="Email">
+          <a href="mailto:amiratexasso@gmail.com" aria-label="Email">
             <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
               <path
                 d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
               />
             </svg>
-            contact@amiratex.com
+            amiratexasso@gmail.com
           </a>
         </div>
       </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- SECTION: HEADER -->
 
     <header>
       <div class="container navbar">
@@ -85,9 +86,7 @@
           <button type="button" class="lang-btn active" data-lang="fr">
             FR
           </button>
-          <button type="button" class="lang-btn" data-lang="en">
-            EN
-          </button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
         </div>
         <button
           class="menu-toggle"
@@ -103,7 +102,7 @@
     </header>
 
     <main id="main">
-      <!-- HERO -->
+      <!-- SECTION: HERO -->
 
       <section class="hero" id="home">
         <div class="hero-slider">
@@ -154,101 +153,146 @@
         </div>
       </section>
 
+      <!-- SECTION: ABOUT -->
+
       <section id="about">
         <div class="container">
-          <div class="about-grid">
-            <!-- IMAGES -->
+          <div class="section-header reveal">
+            <span class="section-badge" id="about-badge"
+              >À PROPOS D'AMIRATEX</span
+            >
 
-            <div class="about-images">
-              <div class="about-image-wrap">
-                <img
-                  src="images/collecte1.webp"
-                  alt="Collecte textile 1"
-                  loading="lazy"
-                />
-              </div>
+            <h2 id="about-main-title">
+              Votre partenaire européen de confiance
+            </h2>
+            <p class="subtitle" id="about-subtitle">
+              Collecte • Tri • Contrôle Qualité • Export International
+            </p>
+          </div>
 
-              <div class="about-image-wrap">
-                <img
-                  src="images/collecte-de-textile.webp"
-                  alt="Collecte textile 2"
-                  loading="lazy"
-                />
-              </div>
-              <div class="about-image-wrap">
-                <img
-                  src="images/collecte_conteneur.webp"
-                  alt="Collecte textile 3"
-                  loading="lazy"
-                />
-              </div>
-              <div class="about-image-wrap">
-                <img
-                  src="images/collecte_conteneur2.webp"
-                  alt="Collecte textile 4"
-                  loading="lazy"
-                />
-              </div>
+          <div class="layout-container reveal">
+            <img
+              src="images/conditionnement-service.webp"
+              alt="Entrepôt Amiratex"
+              class="layout-img"
+              loading="lazy"
+            />
+
+            <div class="text-middle">
+              <h3 id="about-trusted-title">
+                AMIRATEX, votre partenaire de confiance
+              </h3>
+              <p id="about-text-1"></p>
+              <p id="about-text-2"></p>
             </div>
 
-            <!-- TEXTE -->
+            <img
+              src="images/borne_collecte.webp"
+              alt="borne de collecte"
+              class="layout-img layout-img-map"
+              loading="lazy"
+            />
 
-            <div class="about-text">
-              <h2>À PROPOS D'AMIRATEX</h2>
-
-              <p>
-                <strong>AMIRATEX</strong> est spécialisée dans la collecte, le
-                tri et l'exportation de vêtements et textiles de seconde main
-                destinés aux marchés internationaux. Nous proposons des
-                solutions fiables et professionnelles répondant aux besoins des
-                grossistes, importateurs, distributeurs et revendeurs.
+            <div class="text-bottom">
+              <p id="about-summary">
+                Grâce à nos installations et à notre réseau européen, AMIRATEX
+                assure un suivi complet de la collecte au transport
+                international.
               </p>
+            </div>
+          </div>
 
-              <p>
-                Gr�ce � un r�seau solide de partenaires et de fournisseurs, nous
-                s�lectionnons des textiles de qualit� r�pondant aux exigences
-                des grossistes, importateurs et professionnels du secteur.
-              </p>
+          <div class="engagement reveal">
+            <h3 id="about-commitment-title">Notre engagement</h3>
+            <ul id="about-commitment-list"></ul>
+          </div>
 
-              <h3>Notre présence en Europe</h3>
+          <div class="timeline reveal">
+            <h3 id="about-process-title">Nos pays partenaires en Europe</h3>
+            <div
+              id="about-countries"
+              class="country-badges"
+              aria-label="Pays partenaires"
+            ></div>
+            <div class="timeline-wrapper">
+              <div class="timeline-item">
+                <div class="timeline-icon">🇫🇷</div>
+                <h4 id="timeline-collect-title">France</h4>
+                <p id="timeline-collect-text"></p>
+              </div>
+              <div class="timeline-line"></div>
+              <div class="timeline-item">
+                <div class="timeline-icon">🇧🇪</div>
+                <h4 id="timeline-sort-title">Belgique</h4>
+                <p id="timeline-sort-text"></p>
+              </div>
+              <div class="timeline-line"></div>
+              <div class="timeline-item">
+                <div class="timeline-icon">🇩🇪</div>
+                <h4 id="timeline-control-title">Allemagne</h4>
+                <p id="timeline-control-text"></p>
+              </div>
+              <div class="timeline-line"></div>
+              <div class="timeline-item">
+                <div class="timeline-icon">🇪🇸🇵🇹</div>
+                <h4 id="timeline-export-title">Espagne & Portugal</h4>
+                <p id="timeline-export-text"></p>
+              </div>
+            </div>
+          </div>
 
-              <p>
-                AMIRATEX s'appuie sur un vaste réseau de collecte et
-                d'approvisionnement en textiles originaux dans plusieurs pays
-                européens :
-              </p>
-
-          <p>
-            France • Belgique • Allemagne • Pays-Bas • Espagne • Portugal
-          </p>
-
-              <h3>Notre engagement</h3>
-
-              <p>
-                Nous mettons l'accent sur la qualité, la transparence, la
-                réactivité et la satisfaction de nos clients afin de construire
-                des partenariats durables partout dans le monde.
-              </p>
-
-              <p>
-                <strong
-                  >AMIRATEX, votre partenaire de confiance pour un
-                  approvisionnement textile durable, compétitif et de
-                  qualité.</strong
-                >
-              </p>
-
-              <a href="#contact" class="btn btn-primary"> En savoir plus </a>
+          <div class="buttons">
+            <a
+              href="#nos-produits"
+              class="btn btn-primary"
+              id="about-btn-products"
+              >Découvrir nos produits</a
+            >
+            <a
+              href="catalogues/catalogue_amiratex_complet.pdf"
+              class="btn btn-secondary"
+              download
+              id="about-btn-catalog"
+              >Télécharger le catalogue PDF</a
+            >
+            <a href="#contact" class="btn btn-primary" id="about-btn-products"
+              >Demander un devis</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- STATS: chiffres clés (après About) -->
+      <section class="stats" id="stats">
+        <div class="container">
+          <div class="section-title">
+            <span class="section-badge" id="stats-badge">AMIRATEX</span>
+            <h2 id="stats-title">AMIRATEX EN CHIFFRES</h2>
+            <p id="stats-intro">
+              Des résultats concrets au service de nos partenaires
+              internationaux.
+            </p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <h3>25+</h3>
+              <p id="stat-experience">Années d'expérience</p>
+            </div>
+            <div class="stat-box">
+              <h3>30+</h3>
+              <p id="stat-countries">Pays desservis</p>
+            </div>
+            <div class="stat-box">
+              <h3>20 000+</h3>
+              <p id="stat-tons">Tonnes exportées</p>
+            </div>
+            <div class="stat-box">
+              <h3>300+</h3>
+              <p id="stat-containers">Conteneurs exportés</p>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- SERVICES -->
-
-      <!-- ========================= -->
-      <!-- SERVICES PREMIUM -->
-      <!-- ========================= -->
+      <!-- SECTION: SERVICES -->
 
       <section class="services-section" id="process">
         <div class="container">
@@ -393,7 +437,155 @@
           </div>
         </div>
       </section>
-      <!-- Section Nos Produits -->
+      <!-- section carte mondiale -->
+      <section class="amiratex-net-section">
+        <h2 class="amiratex-net-title">
+          Réseau d'Approvisionnement & Exportation Mondiale
+        </h2>
+        <p class="amiratex-net-subtitle">
+          Survolez une région ou cliquez sur les boutons ci-dessous pour plus de
+          détails.
+        </p>
+
+        <!-- Légende -->
+        <div class="amiratex-net-legend">
+          <div class="amiratex-net-legend-item">
+            <span class="amiratex-net-dot europe"></span> Collecte & Sourcing
+            Européen
+          </div>
+          <div class="amiratex-net-legend-item">
+            <span class="amiratex-net-dot export"></span> Destinations
+            d'Exportation Mondiale
+          </div>
+        </div>
+
+        <!-- Carte SVG Fonctionnelle -->
+        <div class="amiratex-map-container">
+          <div class="amiratex-map-header">
+            <span class="amiratex-map-kicker">AMIRATEX / GLOBAL FLOW</span>
+            <span class="amiratex-map-status"><i></i> Réseau actif</span>
+          </div>
+          <svg
+            class="amiratex-svg-map"
+            viewBox="0 0 1000 520"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-labelledby="amiratexMapTitle amiratexMapDesc"
+          >
+            <image
+              class="amiratex-real-map"
+              href="images/world-map.svg"
+              x="0"
+              y="6"
+              width="1000"
+              height="507"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden="true"
+            />
+            <g class="amiratex-map-routes" aria-hidden="true">
+              <!-- Routes depuis la France (hub Europe) -->
+              <path d="M 480 110 Q 340 70 200 110" />
+              <path d="M 480 110 Q 490 200 530 250" />
+              <path d="M 480 110 Q 650 90 700 170" />
+              <path d="M 480 110 Q 710 210 850 350" />
+              <path d="M 480 110 Q 360 230 300 300" />
+
+              <!-- Cercle Europe centré sur la France -->
+              <circle class="amiratex-france-marker" cx="480" cy="110" r="10" />
+
+              <!-- Destinations continents -->
+              <circle class="amiratex-dest" cx="200" cy="110" r="6" />
+              <!-- Amérique du Nord -->
+              <circle class="amiratex-dest" cx="300" cy="300" r="6" />
+              <!-- Amérique du Sud -->
+              <circle class="amiratex-dest" cx="530" cy="250" r="6" />
+              <!-- Afrique -->
+              <circle class="amiratex-dest" cx="700" cy="170" r="6" />
+              <!-- Asie -->
+              <circle class="amiratex-dest" cx="850" cy="350" r="6" />
+              <!-- Océanie -->
+            </g>
+
+            <!-- AMÉRIQUE DU NORD (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="north-america"
+              data-name="Amérique du Nord"
+              data-info="Exportation par conteneurs vers nos partenaires importateurs."
+              d="M 50 80 L 320 80 L 300 240 L 180 250 L 50 180 Z"
+            />
+
+            <!-- AMÉRIQUE DU SUD (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="south-america"
+              data-name="Amérique du Sud"
+              data-info="Expédition et approvisionnement en textiles et friperie."
+              d="M 250 220 L 380 220 L 300 480 L 220 400 Z"
+            />
+
+            <!-- EUROPE (Collecte & Sourcing) -->
+            <path
+              class="amiratex-region zone-europe"
+              data-region-key="europe"
+              data-name="Europe"
+              data-info="Suivi complet de la collecte, du tri et du sourcing de textiles recyclés."
+              d="M 440 50 L 580 50 L 570 140 L 450 140 Z"
+            />
+
+            <!-- AFRIQUE (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="africa"
+              data-name="Afrique"
+              data-info="Exportation régulière de vêtements triés, balles textiles et articles recyclés."
+              d="M 400 150 L 600 150 L 575 415 L 420 425 Z"
+            />
+
+            <!-- ASIE & MOYEN-ORIENT (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="asia"
+              data-name="Asie & Moyen-Orient"
+              data-info="Fourniture et livraison de conteneurs pour marchés industriels et commerciaux."
+              d="M 605 60 L 950 60 L 900 320 L 605 240 Z"
+            />
+
+            <!-- OCÉANIE (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="oceania"
+              data-name="Océanie"
+              data-info="Exportation et distribution internationale sur demande."
+              d="M 800 340 L 950 340 L 920 460 L 780 440 Z"
+            />
+          </svg>
+
+          <!-- Zone d'affichage du texte -->
+          <div class="amiratex-infobox" id="amiratexInfoBox">
+            Survolez une région ou cliquez sur un bouton ci-dessous.
+          </div>
+        </div>
+
+        <!-- Boutons d'accès rapide -->
+        <div class="amiratex-buttons">
+          <button class="amiratex-btn" data-region="europe">
+            🇪🇺 Europe (Collecte)
+          </button>
+          <button class="amiratex-btn" data-region="africa">
+            🌍 Afrique (Export)
+          </button>
+          <button class="amiratex-btn" data-region="asia">
+            🌏 Asie & Moyen-Orient (Export)
+          </button>
+          <button class="amiratex-btn" data-region="north-america">
+            🌎 Amériques (Export)
+          </button>
+        </div>
+      </section>
+
+      <!-- SECTION: PRODUCTS -->
       <section id="nos-produits">
         <div class="container">
           <div class="section-title">
@@ -405,13 +597,29 @@
             </p>
           </div>
 
-          <!-- SLIDER -->
+          <!-- SLIDER: mini-cartes permettant de sélectionner un produit -->
           <div class="products-slider">
             <!-- Texte explicatif -->
             <p class="slider-hint">
               <strong>Sélectionnez un produit</strong> pour consulter ses
               détails et télécharger son catalogue spécifique.
             </p>
+            <!-- Flèches -->
+            <button
+              class="slider-arrow slider-arrow-prev"
+              aria-label="Produit précédent"
+              type="button"
+            >
+              ‹
+            </button>
+            <button
+              class="slider-arrow slider-arrow-next"
+              aria-label="Produit suivant"
+              type="button"
+            >
+              ›
+            </button>
+
             <div class="products-slider-track">
               <!-- === PREMIÈRE COPIE === -->
               <a href="#card-1" class="mini-product">
@@ -419,11 +627,14 @@
                 <span>Crème Été</span>
               </a>
               <a href="#card-2" class="mini-product">
-                <img src="images/balles1-.webp" alt="Crème Hiver" />
+                <img src="images/creme_chargee.webp" alt="Crème Hiver" />
                 <span>Crème Hiver</span>
               </a>
               <a href="#card-3" class="mini-product">
-                <img src="images/tri-service.webp" alt="Grade A Été" />
+                <img
+                  src="images/camion_ptte_balle_gradeA_B.webp"
+                  alt="Grade A Été"
+                />
                 <span>Grade A Été</span>
               </a>
               <a href="#card-4" class="mini-product">
@@ -450,21 +661,38 @@
                 <span>Chaussures & Sacs</span>
               </a>
               <a href="#card-9" class="mini-product">
-                <img src="images/balles recyclage.webp" alt="Recyclage" />
+                <img src="images/balles 1.webp" alt="Recyclage" />
                 <span>Matière Recyclage</span>
               </a>
-
+              <a href="#card-10" class="mini-product">
+                <img src="images/Appoint.webp" alt="Ecrémé" />
+                <span>Ecrémé</span>
+              </a>
+              <a href="#card-11" class="mini-product">
+                <img
+                  src="images/mixte_tropical_ete.webp"
+                  alt="Mixte Tropical"
+                />
+                <span>Mixte Tropical</span>
+              </a>
+              <a href="#card-12" class="mini-product">
+                <img src="images\export_palette1.webp" alt="Mixte Tropical" />
+                <span>Palette Export 500 kg</span>
+              </a>
               <!-- === DEUXIÈME COPIE (obligatoire pour l'effet infini) === -->
               <a href="#card-1" class="mini-product">
                 <img src="images/creme.webp" alt="Crème Été" />
                 <span>Crème Été</span>
               </a>
               <a href="#card-2" class="mini-product">
-                <img src="images/balles1-.webp" alt="Crème Hiver" />
+                <img src="images/creme_chargee.webp" alt="Crème Hiver" />
                 <span>Crème Hiver</span>
               </a>
               <a href="#card-3" class="mini-product">
-                <img src="images/tri-service.webp" alt="Grade A Été" />
+                <img
+                  src="images/camion_ptte_balle_gradeA_B.webp"
+                  alt="Grade A Été"
+                />
                 <span>Grade A Été</span>
               </a>
               <a href="#card-4" class="mini-product">
@@ -491,13 +719,32 @@
                 <span>Chaussures & Sacs</span>
               </a>
               <a href="#card-9" class="mini-product">
-                <img src="images/balles recyclage.webp" alt="Recyclage" />
+                <img
+                  src="images/recyclage_chiffon_couleur.webp"
+                  alt="Recyclage"
+                />
                 <span>Matière Recyclage</span>
+              </a>
+              <a href="#card-10" class="mini-product">
+                <img src="images/Appoint.webp" alt="Ecrémé" />
+                <span>Ecrémé</span>
+              </a>
+              <a href="#card-11" class="mini-product">
+                <img
+                  src="images/mixte_tropical_ete.webp"
+                  alt="Mixte Tropical"
+                />
+
+                <span>Mixte Tropical</span>
+              </a>
+              <a href="#card-12" class="mini-product">
+                <img src="images\export_palette1.webp" alt="Mixte Tropical" />
+                <span>Palette Export 500 kg</span>
               </a>
             </div>
           </div>
 
-          <!-- BOUTON CATALOGUE -->
+          <!-- BOUTON CATALOGUE: lien vers le catalogue complet -->
           <div class="catalog-download-wrap">
             <a
               href="catalogues/catalogue_amiratex_complet.pdf"
@@ -508,9 +755,10 @@
           </div>
 
           <!-- GRILLE PRODUITS (avec ID uniques) -->
+          <!-- Chaque carte est associée à un produit et peut être traduite via JS. -->
           <div class="product-grid">
             <div class="product-card" id="card-1">
-              <img src="images/creme.webp" alt="Crème Été" />
+              <img src="images/creme_extra.webp" alt="Crème Été" />
               <div class="product-content">
                 <h3>Crème Été</h3>
                 <p>Sélection premium été haute qualité.</p>
@@ -524,7 +772,7 @@
             </div>
 
             <div class="product-card" id="card-2">
-              <img src="images/balles1-.webp" alt="Crème Hiver" />
+              <img src="images/creme_chargee.webp" alt="Crème Hiver" />
               <div class="product-content">
                 <h3>Crème Hiver</h3>
                 <p>Articles hiver premium triés.</p>
@@ -538,7 +786,10 @@
             </div>
 
             <div class="product-card" id="card-3">
-              <img src="images/tri-service.webp" alt="Grade A Été" />
+              <img
+                src="images/camion_ptte_balle_gradeA_B.webp"
+                alt="Grade A Été"
+              />
               <div class="product-content">
                 <h3>Grade A - Été</h3>
                 <p>Vêtements Grade A été pour export.</p>
@@ -594,6 +845,12 @@
             </div>
 
             <div class="product-card hidden" id="card-7">
+              <span
+                class="product-badge"
+                data-badge-fr="Brut / Non trié"
+                data-badge-en="Raw / Unsorted"
+                >Brut / Non trié</span
+              >
               <img src="images/textile_original.webp" alt="Original 18T" />
               <div class="product-content">
                 <h3>Original Camion 18T</h3>
@@ -625,7 +882,7 @@
             </div>
 
             <div class="product-card hidden" id="card-9">
-              <img src="images/balles recyclage.webp" alt="Recyclage" />
+              <img src="images/balles 1.webp" alt="Recyclage" />
               <div class="product-content">
                 <h3>Matière Recyclage</h3>
                 <p>Laine, jeans, coton recyclables.</p>
@@ -637,16 +894,67 @@
                 >
               </div>
             </div>
+
+            <div class="product-card hidden" id="card-10">
+              <img src="images/Appoint.webp" alt="Ecrémé" />
+              <div class="product-content">
+                <h3>Ecrémé</h3>
+                <p>Sélection Ecrémé pour l'export.</p>
+                <a
+                  href="catalogues/CATALOGUE_ECREME.pdf"
+                  class="download-btn"
+                  download
+                  >Télécharger</a
+                >
+              </div>
+            </div>
+            <div class="product-card hidden" id="card-11">
+              <img
+                src="images/mixte_tropical_ete.webp"
+                alt="Mixte Tropical"
+                loading="lazy"
+              />
+              <div class="product-content">
+                <h3>Mixte Tropical</h3>
+                <p>Textiles seconde main mixte légers pour climats chauds</p>
+                <a
+                  href="catalogues/CATALOGUE_MIXTE_TROPICAL.pdf"
+                  class="download-btn"
+                  download
+                  >Télécharger</a
+                >
+              </div>
+            </div>
+            <div class="product-card hidden" id="card-12">
+              <img
+                src="images\export_palette1.webp"
+                alt="Palette Export 500 kg"
+                loading="lazy"
+              />
+              <div class="product-content">
+                <h3>Palette Export 500 kg</h3>
+                <p>
+                  Export en palette dès 500 kg – Livraison à domicile (+350 € de
+                  transport)
+                </p>
+                <a
+                  href="catalogues/CATALOGUE_MIXTE_TROPICAL.pdf"
+                  class="download-btn"
+                  download
+                  >Télécharger</a
+                >
+              </div>
+            </div>
           </div>
 
           <div class="load-more-container">
-            <button class="btn-more" id="loadMoreBtn">Voir plus</button>
+            <button class="btn-more" id="loadMoreBtn">
+              Voir plus de produits
+            </button>
           </div>
         </div>
       </section>
-      <!-- ========================= -->
-      <!-- GALLERY -->
-      <!-- ========================= -->
+      <!-- SECTION: GALLERY -->
 
       <section id="gallery">
         <div class="container">
@@ -657,20 +965,21 @@
 
           <div class="gallery-grid">
             <img
-              src="images/GRADE_B_ETE_40_PIEDS.webp"
-              alt="GRADE B ETE 40 PIEDS"
-              class="gallery-item"
-            />
-            <img
-              src="images/CREME-GRADE_A_ETE.webp"
-              alt="CREME GRADE A ETE"
-              class="gallery-item"
-            />
-            <img
               src="images/entrepôt_ext.webp"
               alt="ENTREPOTS VUE DE L'EXTERIEUR"
               class="gallery-item"
             />
+            <img
+              src="images\presse.webp"
+              alt="GRADE B ETE 40 PIEDS"
+              class="gallery-item"
+            />
+            <img
+              src="images/borne_collecte.webp"
+              alt="CREME GRADE A ETE"
+              class="gallery-item"
+            />
+
             <img
               src="images/amiratex_vue_haut.webp"
               alt="AMIRATEX VUE DU HAUT"
@@ -678,12 +987,12 @@
             />
 
             <img
-              src="images/tri-service.webp"
+              src="images\tri2.webp"
               alt="TRI-SERVICE"
               class="gallery-item"
             />
             <img
-              src="images/espace_tri.webp"
+              src="images\tri4.webp"
               alt="ESPACE DE TRI"
               class="gallery-item"
             />
@@ -698,16 +1007,6 @@
               class="gallery-item"
             />
             <img
-              src="images/camion_big_bags.webp"
-              alt="CHARGEMENTS BIG BAGS"
-              class="gallery-item"
-            />
-            <img
-              src="images/logistique_2.webp"
-              alt="CHARGEMENT CONTENEUR"
-              class="gallery-item"
-            />
-            <img
               src="images/balles_stock.webp"
               alt="Balles de vêtements de seconde main prêtes pour l'export"
               class="gallery-item"
@@ -716,61 +1015,44 @@
               src="images/stock1.webp"
               alt="Balles de vêtements de seconde main prêtes pour l'export"
               class="gallery-item"
-            /><img
-              src="images/export_conteneurs.webp"
-              alt="CONTENEURS PRETS A L'EXPORT"
-              class="gallery-item"
             />
             <img
               src="images/chargement_conteneur.webp"
               alt="CHERGEMENTS DE CONTENEUR TEXTILES DE SECONDE MAIN"
               class="gallery-item"
             />
+            <img
+              src="images/camion_big_bags.webp"
+              alt="CHARGEMENTS BIG BAGS"
+              class="gallery-item"
+            />
+            <img
+              src="images/conteneur_chargee_rampe_chargement.webp"
+              alt="CHARGEMENT CONTENEUR"
+              class="gallery-item"
+            />
 
-            <video
-              controls
-              poster="images/chargement_conteneur.webp"
-              class="gallery-video"
-            >
-              <source src="videos/video_chargement.mp4" type="video/mp4" />
-            </video>
+            <img
+              src="images/logistique_2.webp"
+              alt="CHARGEMENT CONTENEUR"
+              class="gallery-item"
+            />
+
+            <img
+              src="images/export_conteneurs.webp"
+              alt="CONTENEURS PRETS A L'EXPORT"
+              class="gallery-item"
+            />
+            <img
+              src="images/export-service (2).webp"
+              alt="CONTENEURS PRETS A L'EXPORT"
+              class="gallery-item"
+            />
           </div>
         </div>
       </section>
 
-      <!-- STATS -->
-
-      <section class="stats">
-        <div class="container">
-          <div class="section-title">
-            <h2>AMIRATEX EN CHIFFRES</h2>
-          </div>
-
-          <div class="stats-grid">
-            <div class="stat-box">
-              <h3>6000+</h3>
-              <p>Tonnes traitées</p>
-            </div>
-
-            <div class="stat-box">
-              <h3>20+</h3>
-              <p>Pays desservis</p>
-            </div>
-
-            <div class="stat-box">
-              <h3>100+</h3>
-              <p>Partenaires professionnels</p>
-            </div>
-
-            <div class="stat-box">
-              <h3>300+</h3>
-              <p>Conteneurs exportés</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
+      <!-- SECTION: CONTACT -->
 
       <section class="contact" id="contact">
         <div class="container">
@@ -853,6 +1135,7 @@
                 </div>
               </div>
 
+              <!-- Honeypot anti-spam invisible: si ce champ est rempli, le formulaire est refusé. -->
               <div class="visually-hidden" aria-hidden="true">
                 <label for="website">Website</label>
                 <input id="website" name="website" type="text" />
@@ -873,10 +1156,7 @@
 
               <button type="submit" class="btn btn-primary" id="contact-submit">
                 <span class="btn-text">Envoyer</span>
-                <span
-                  class="spinner is-hidden"
-                  id="form-spinner"
-                ></span>
+                <span class="spinner is-hidden" id="form-spinner"></span>
               </button>
 
               <p id="form-message" role="status" aria-live="polite"></p>
@@ -886,7 +1166,7 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- SECTION: FOOTER -->
 
     <footer>
       <div class="container">
@@ -940,7 +1220,13 @@
         </button>
 
         <div class="detail-gallery-main">
+          <button class="gallery-nav prev" aria-label="Image précédente">
+            ‹
+          </button>
           <div class="gallery-track-main" id="gallery-track-main"></div>
+          <button class="gallery-nav next" aria-label="Image suivante">
+            ›
+          </button>
           <div class="gallery-dots-main" id="gallery-dots-main"></div>
         </div>
 
@@ -951,6 +1237,9 @@
 
           <a id="detail-download" href="#" class="btn btn-primary" download>
             Télécharger le catalogue
+          </a>
+          <a id="detail-quote" href="#contact" class="btn btn-secondary">
+            Demander un devis
           </a>
         </div>
       </div>
