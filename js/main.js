@@ -675,6 +675,7 @@
     statQuality: "Contrôle qualité",
     aboutBtnProducts: "Découvrir nos produits",
     aboutBtnCatalog: "Télécharger le catalogue PDF",
+    aboutBtnRequest: "Demander un devis",
     aboutCommitmentItems: [
       "Produits soigneusement sélectionnés",
       "Contrôle qualité rigoureux",
@@ -815,7 +816,7 @@ requestQuote: "Demander un devis"
     statQuality: "Quality Control",
     aboutBtnProducts: "Discover Our Products",
     aboutBtnCatalog: "Download PDF Catalogue",
-
+    aboutBtnRequest: "Request a Quote",
     servicesBadge: "AMIRATEX EXPERTISE",
     servicesTitle: "TEXTILE & INTERNATIONAL<br />LOGISTICS SOLUTIONS",
     servicesIntro: "High-end professional solutions for textile collection, sorting, packing and international export.",
@@ -844,6 +845,7 @@ requestQuote: "Demander un devis"
     download: "Download",
     loadMore: "View more products",
     loadMore: "View more products",
+    
     galleryTitle: "GALLERY",
     galleryIntro: "Discover our facilities and operations.",
     statsTitle: "AMIRATEX IN NUMBERS",
@@ -1059,7 +1061,7 @@ setText("#about-process-title", t.aboutProcessTitle);
     // Boutons
     setText("#about-btn-products", t.aboutBtnProducts);
     setText("#about-btn-catalog", t.aboutBtnCatalog);
-
+    setText("#about-btn-request", t.aboutBtnRequest);
     //  les anciennes mises à jour 
     //setText(".about-text h2", t.aboutTitle || t.Title);           // fallback
     //setHtml(".about-text p:nth-of-type(1)", t.about1);
