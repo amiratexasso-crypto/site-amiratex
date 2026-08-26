@@ -5878,3 +5878,105 @@ section.stats,
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+/* ============================================================
+   FIX MOBILE — Vue détaillée produit
+   ============================================================ */
+@media (max-width: 768px) {
+  .product-detail-view {
+    padding-top: 56px !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .product-detail-view .detail-content {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: calc(100vh - 56px);
+  }
+
+  .detail-close {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 28px !important;
+    z-index: 10050 !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+  }
+
+  .detail-gallery-main {
+    position: relative !important;
+    top: 0 !important;
+    width: 100% !important;
+    padding: 12px 0 8px !important;
+    order: 1;
+  }
+
+  .gallery-track-main .gallery-item {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .gallery-track-main img,
+  .gallery-track-main video {
+    max-width: 100% !important;
+    max-height: 50vh !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .gallery-nav {
+    display: flex !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px !important;
+  }
+  .gallery-nav.prev { left: 6px !important; }
+  .gallery-nav.next { right: 6px !important; }
+
+  .detail-body {
+    order: 2;
+    padding: 20px 16px 40px !important;
+    width: 100% !important;
+  }
+
+  .detail-body h1 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .detail-body .desc {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+
+  #detail-download,
+  #detail-quote {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 12px 0 0 !important;
+    padding: 14px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .products-slider-track {
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .mini-product {
+    -webkit-tap-highlight-color: rgba(60, 179, 113, 0.25);
+    touch-action: manipulation;
+  }
+}

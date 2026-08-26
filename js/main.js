@@ -675,7 +675,7 @@
     statQuality: "Contrôle qualité",
     aboutBtnProducts: "Découvrir nos produits",
     aboutBtnCatalog: "Télécharger le catalogue PDF",
-    aboutBtnRequest: "Demander un devis",
+    aboutBtnRequest: "Demander un devis personnalisé",
     aboutCommitmentItems: [
       "Produits soigneusement sélectionnés",
       "Contrôle qualité rigoureux",
