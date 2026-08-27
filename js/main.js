@@ -714,6 +714,24 @@
     loadMore: "Voir plus de produits",
     galleryTitle: "GALERIE",
     galleryIntro: "Découvrez nos installations et activités.",
+    galleryTitles: [
+  "ENTREPÔTS VUE DE L'EXTÉRIEUR",
+  "Presse",
+  "Borne de collecte",
+  "AMIRATEX VUE DU HAUT",
+  "TRI-SERVICE",
+  "ESPACE DE TRI",
+  "RUMMAGE ENFANT",
+  "COULOIR DE STOCKAGE",
+  "BALLES DE VÊTEMENTS DE SECONDE MAIN PRÊTES POUR L'EXPORT",
+  "BALLES DE VÊTEMENTS DE SECONDE MAIN PRÊTES POUR L'EXPORT",
+  "CHARGEMENT DE CONTENEUR TEXTILES DE SECONDE MAIN",
+  "CHARGEMENTS BIG BAGS",
+  "CHARGEMENT CONTENEUR",
+  "CHARGEMENT CONTENEUR",
+  "CONTENEURS PRÊTS À L'EXPORT",
+  "CONTENEURS PRÊTS À L'EXPORT",
+],
     statsTitle: "AMIRATEX EN CHIFFRES",
     statsIntro: "Des résultats concrets au service de nos partenaires internationaux. ",
     stats: ["Année d'expérience", "Pays desservis", "Tonnes traitées", "Conteneurs exportés"],
@@ -848,6 +866,24 @@ requestQuote: "Demander un devis"
     
     galleryTitle: "GALLERY",
     galleryIntro: "Discover our facilities and operations.",
+    galleryTitles: [
+  "WAREHOUSES EXTERIOR VIEW",
+  "Press",
+  "Collection bin",
+  "AMIRATEX AERIAL VIEW",
+  "SORTING SERVICE",
+  "SORTING AREA",
+  "CHILDREN'S RUMMAGE",
+  "STORAGE AISLE",
+  "SECOND-HAND CLOTHING BALES READY FOR EXPORT",
+  "SECOND-HAND CLOTHING BALES READY FOR EXPORT",
+  "LOADING SECOND-HAND TEXTILE CONTAINER",
+  "BIG BAGS LOADING",
+  "CONTAINER LOADING",
+  "CONTAINER LOADING",
+  "CONTAINERS READY FOR EXPORT",
+  "CONTAINERS READY FOR EXPORT",
+],
     statsTitle: "AMIRATEX IN NUMBERS",
     statsIntro: "Concrete results in the service of our international partners.",
     stats: ["Years of Experience", "Countries Served", "Exported Tons", "Containers Exported"],
@@ -1138,7 +1174,14 @@ setText("#about-process-title", t.aboutProcessTitle);
        setText("#stats-title", t.statsTitle);
 setText("#stats-intro", t.statsIntro);
 setAll(".stat-box p", t.stats);
-
+if (Array.isArray(t.galleryTitles)) {
+  document.querySelectorAll("#gallery .gallery-title").forEach((el, index) => {
+    if (t.galleryTitles[index]) el.textContent = t.galleryTitles[index];
+  });
+  document.querySelectorAll("#gallery .gallery-item").forEach((img, index) => {
+    if (t.galleryTitles[index]) img.alt = t.galleryTitles[index];
+  });
+}
     // Section contact.
     setText(".contact .section-title h2", t.contactTitle);
     setText(".contact .section-title p", t.contactIntro);

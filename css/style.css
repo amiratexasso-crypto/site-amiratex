@@ -1982,6 +1982,61 @@ section.stats,
         border-radius: 18px;
         display: block;
       }
+      /* =========================================
+   TITRE DES IMAGES AU SURVOL
+   ========================================= */
+
+.gallery-item-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* Image */
+.gallery-item-wrapper .gallery-item {
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+/* Titre */
+.gallery-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 14px 12px;
+
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(100%);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  pointer-events: none;
+}
+
+/* Survol de l'image */
+.gallery-item-wrapper:hover .gallery-item {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+/* Apparition du titre */
+.gallery-item-wrapper:hover .gallery-title {
+  opacity: 1;
+  transform: translateY(0);
+}
      /* ========================= */
 /* LIGHTBOX GALERIE          */
 /* ========================= */
