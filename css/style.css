@@ -1153,8 +1153,67 @@ html {
         font-weight: 500;
         font-size: 15.5px;
       }
-      /* BOUTON CATALOGUE */
+    /* =========================================
+   CORRECTIF ESPACE TITRE → "Sélectionnez un produit"
+   ========================================= */
 
+#nos-produits .section-title {
+  margin-bottom: 0 !important;
+  gap: 10px !important;
+}
+
+#nos-produits .section-title p {
+  margin: 0 auto 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#nos-produits .products-slider {
+  margin-top: 0 !important;
+  padding-top: 12px !important;   /* au lieu de 48px */
+  padding-bottom: 30px;
+}
+
+#nos-produits .slider-hint {
+  margin: 4px 0 6px 0 !important;
+}
+
+#nos-produits .slider-arrow-down {
+  margin: 0 0 18px 0 !important;
+}  
+      /* BOUTON CATALOGUE */
+/* Flèche moderne sous le texte d'indication */
+.slider-arrow-down {
+  display: flex;
+  justify-content: center;
+  margin: 6px 0 28px;          /* ← top réduit de 18px à 6px */
+  color: #3cb371;
+  opacity: 0.85;
+  animation: bounceDown 2.2s infinite;
+}
+
+.slider-arrow-down svg {
+  width: 34px;
+  height: 34px;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow-down:hover {
+  opacity: 1;
+  transform: translateY(4px);
+}
+
+/* Animation douce de rebond */
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
+}
       .catalog-download {
         text-align: center;
         margin-bottom: 60px;
@@ -1201,7 +1260,22 @@ html {
   margin: 18px 0;
   padding: 48px 0;
 }
+/* Réduit fortement l’espace entre le texte et la flèche */
+.products-slider .slider-hint {
+  margin-bottom: 4px !important;   /* ← très important */
+  padding-bottom: 0 !important;
+}
 
+.slider-arrow-down {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 24px !important;     /* margin-top à 0 */
+  padding: 0 !important;
+  color: #3cb371;
+  opacity: 0.85;
+  animation: bounceDown 2.2s infinite;
+  line-height: 1;
+}
 .products-slider-track {
   display: flex;
   width: max-content;
@@ -1938,16 +2012,19 @@ section.stats,
   opacity: 1 !important;
   background: rgba(255, 255, 255, 0.08) !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  padding: 36px 20px !important;
+  padding: 36px 40px !important;          /* padding horizontal augmenté */
   border-radius: 20px !important;
   text-align: center !important;
+  width: 280px !important;                /* largeur augmentée */
+  min-width: 260px !important;            /* sécurité */
+  box-sizing: border-box !important;
 }
 
 #stats .stat-box h3,
 .stats .stat-box h3 {
-  font-size: 48px !important;
+  font-size: 40px !important;
   color: #3cb371 !important;
-  font-weight: 800 !important;
+  font-weight: 1000 !important;
 }
 
 #stats .stat-box p,
@@ -1956,6 +2033,7 @@ section.stats,
   font-size: 15px !important;
   font-weight: 600 !important;
 }
+
 
 @media (max-width: 900px) {
   #stats .stats-grid,
@@ -2946,28 +3024,29 @@ body.lightbox-open #lightbox {
           padding: 64px 0;
         }
 
-        .section-title {
-          margin-bottom: 38px;
-        }
+       /* === RÉDUCTION FORCÉE DE L'ESPACE ENTRE LES DEUX TEXTES === */
 
-        .section-title h2,
-        .services-section .section-title h2,
-        #nos-produits .section-title h2 {
-          font-size: 30px;
-          line-height: 1.18;
-        }
+#nos-produits .section-title {
+  margin-bottom: 8px !important;
+  gap: 12px !important;
+}
 
-        #nos-produits .section-title h2 {
-          border-radius: 18px;
-          padding: 18px;
-        }
+#nos-produits .section-title p {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+}
 
-        .section-title p,
-        .services-section .section-title p,
-        #nos-produits .section-title p {
-          font-size: 15px;
-        }
+#nos-produits .products-slider {
+  margin-top: 0 !important;
+  padding-top: 0px !important;   /* ← c’était 48px, c’est ça qui créait le grand trou */
+  padding-bottom: 30px;
+}
 
+#nos-produits .slider-hint {
+  margin-top: 0px !important;
+  margin-bottom: 8px !important;
+}
         .about-grid,
         .combined-layout {
           grid-template-columns: 1fr;
