@@ -452,7 +452,7 @@
       "card-7": {
         download: "catalogues/catalogue_recyclage_original.pdf",
         gallery: [
-           { type: "img", src: "images/borne_collecte.webp",title: "borne de collecte " },
+           { type: "img", src: "images/borne _de_collecte.webp",title: "borne de collecte " },
           { type: "img", src: "images/textile_original.webp",title: "textile original " },
           { type: "img", src: "images/original.webp",title: "original " },          
          { type: "img", src: "images/original small_bags.webp",title: "original small bags " },
@@ -557,7 +557,7 @@
   "card-7": {
     download: "catalogues/catalogue_recyclage_original.pdf",
     gallery: [
-      { type: "img", src: "images/borne_collecte.webp", title: "Collection bin" },
+      { type: "img", src: "images/borne _de_collecte.webp", title: "Collection bin" },
       { type: "img", src: "images/textile_original.webp", title: "Original textile" },
       { type: "img", src: "images/original.webp", title: "Original" },
       { type: "img", src: "images/original small_bags.webp", title: "Original small bags" },
