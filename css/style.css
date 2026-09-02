@@ -359,7 +359,12 @@ html {
         max-width: 800px;
         margin: auto;
       }
-
+.about-products {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
       /* Grille principale À PROPOS */
       /* ========================= */
       /* ABOUT - Disposition centrée avec cartes aux 4 coins */
@@ -1975,71 +1980,189 @@ body[data-lang="en"] .mini-product::after {
 /* SECTION: STATS (après About) */
 /* ========================= */
 
-/* === FORCE STATS SECTION === */
+/* =========================================
+   AMIRATEX - STATS
+========================================= */
+
 section.stats,
 #stats.stats {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  transform: none !important;
-  background: linear-gradient(180deg, #0b1c39 0%, #10233f 100%) !important;
-  padding: 90px 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #0b1c39 0%, #10233f 100%) !important;
+    padding: 90px 20px !important;
 }
 
-#stats .section-title h2,
-.stats .section-title h2 {
-  color: #ffffff !important;
-  font-size: 40px !important;
-  font-weight: 800 !important;
+#stats .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
-#stats .section-title p,
-.stats .section-title p {
-  color: rgba(255, 255, 255, 0.72) !important;
+
+/* TITRE */
+
+#stats .section-title h2 {
+    color: #ffffff !important;
+    font-size: 40px !important;
+    font-weight: 800 !important;
+    text-align: center;
 }
 
-#stats .stats-grid,
-.stats .stats-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 24px !important;
-  opacity: 1 !important;
+#stats .section-title p {
+    color: rgba(255, 255, 255, 0.72) !important;
+    text-align: center;
 }
 
-#stats .stat-box,
-.stats .stat-box {
-  display: block !important;
-  opacity: 1 !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  padding: 36px 40px !important;          /* padding horizontal augmenté */
-  border-radius: 20px !important;
-  text-align: center !important;
-  width: 280px !important;                /* largeur augmentée */
-  min-width: 260px !important;            /* sécurité */
-  box-sizing: border-box !important;
+
+/* GRILLE */
+
+#stats .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
 }
 
-#stats .stat-box h3,
-.stats .stat-box h3 {
-  font-size: 40px !important;
-  color: #3cb371 !important;
-  font-weight: 1000 !important;
+
+/* CARTES */
+
+#stats .stat-box {
+    display: block !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    padding: 36px 20px !important;
+    border-radius: 20px !important;
+    text-align: center !important;
 }
 
-#stats .stat-box p,
-.stats .stat-box p {
-  color: rgba(255, 255, 255, 0.85) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
+
+/* CHIFFRES */
+
+#stats .stat-box h3 {
+    font-size: 40px !important;
+    line-height: 1.1;
+    color: #3cb371 !important;
+    font-weight: 1000 !important;
+    margin: 0 0 15px;
 }
 
+
+/* TEXTE */
+
+#stats .stat-box p {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+/* =========================================
+   TABLETTE
+========================================= */
 
 @media (max-width: 900px) {
-  #stats .stats-grid,
-  .stats .stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+
+    #stats.stats {
+        padding: 65px 20px !important;
+    }
+
+    #stats .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #stats.stats {
+        padding: 50px 15px !important;
+    }
+
+    #stats .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    #stats .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    #stats .stat-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 28px 15px !important;
+    }
+
+    #stats .stat-box h3 {
+        font-size: 42px !important;
+    }
+
+    #stats .stat-box p {
+        font-size: 16px !important;
+    }
+
+    #stats .section-title h2 {
+        font-size: 34px !important;
+        line-height: 1.15;
+    }
+
+    #stats .section-title p {
+        font-size: 17px !important;
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================
+   TRÈS PETIT MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    #stats.stats {
+        padding: 40px 12px !important;
+    }
+
+    #stats .stat-box {
+        padding: 25px 10px !important;
+    }
+
+    #stats .stat-box h3 {
+        font-size: 38px !important;
+    }
+
+    #stats .stat-box p {
+        font-size: 15px !important;
+    }
+
+    #stats .section-title h2 {
+        font-size: 30px !important;
+    }
 }
       /* ========================= */
       /* SECTION: GALLERY */

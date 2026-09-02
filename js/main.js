@@ -630,7 +630,25 @@
     heroButtons: ["Découvrir nos produits", "Télécharger nos catalogues"],
 
     Title: "À PROPOS D'AMIRATEX",
-    about1: "<strong>AMIRATEX</strong> est spécialisée dans la collecte, le tri et l'exportation de vêtements et textiles de seconde main destinés aux marchés internationaux. Nous proposons des solutions fiables et professionnelles répondant aux besoins des grossistes, importateurs, distributeurs et revendeurs.",
+
+about1: `<p><strong>AMIRATEX</strong> est un opérateur français spécialisé dans la <strong>collecte, le tri, le conditionnement et l’exportation internationale de Textiles, Linge et Chaussures (TLC) de seconde main</strong>. Grâce à nos installations et à notre réseau de partenaires et fournisseurs européens, nous assurons un <strong>approvisionnement fiable et un suivi complet</strong>, de la collecte jusqu’à l’exportation.</p>
+
+<p>Nous proposons aux <strong>grossistes, importateurs, distributeurs et revendeurs professionnels</strong> une gamme adaptée aux différents marchés internationaux, comprenant :</p>
+
+<ul>
+    <li>Crème Été</li>
+    <li>Crème Hiver</li>
+    <li>Grade A - Été</li>
+    <li>Grade A - Hiver</li>
+    <li>Grade B - Été</li>
+    <li>Grade B - Hiver</li>
+    <li>Original Camion - 18 tonnes</li>
+    <li>Chaussures - Sacs</li>
+    <li>Matières de recyclage : Pulls en laine, Jeans, Coton, Laine cardée</li>
+</ul>
+
+<p>Nos marchandises sont commercialisées exclusivement <strong>par conteneurs entiers de 20 ou 40 pieds</strong>, sur devis, avec des solutions adaptées aux besoins de nos clients professionnels. Grâce à notre organisation et à notre réseau européen, <strong>AMIRATEX assure des approvisionnements réguliers et des exportations vers les marchés internationaux.</strong></p>`,
+
     about2: "Grâce à un réseau solide de partenaires et de fournisseurs, nous sélectionnons des textiles de qualité répondant aux exigences des grossistes, importateurs et professionnels du secteur.",
     aboutPresence: "Notre présence en Europe",
     aboutPresenceText: "AMIRATEX s'appuie sur un vaste réseau de collecte et d'approvisionnement en textiles originaux dans plusieurs pays européens :",
@@ -657,9 +675,16 @@
     // Nouvelles clés pour la structure About
     aboutMainTitle: "Votre partenaire européen de confiance",
     aboutTrustedTitle: "AMIRATEX, votre partenaire de confiance",
-    aboutText1: "<strong>AMIRATEX</strong> est spécialisée dans la collecte, le tri et l'exportation de vêtements et textiles de seconde main destinés aux marchés internationaux. Nous proposons des solutions fiables et professionnelles répondant aux besoins des grossistes, importateurs, distributeurs et revendeurs.",
-    aboutText2: "Grâce à un réseau solide de partenaires et de fournisseurs européens, nous sélectionnons des textiles répondant aux exigences des professionnels les plus exigeants.",
-    aboutSummary: "Grâce à nos installations et à notre réseau européen, AMIRATEX assure un suivi complet de la collecte et de l'approvisionnement, avec des exportations partout dans le monde.",
+    aboutText1: `<p><strong>AMIRATEX</strong> est un opérateur français spécialisé dans la <strong>collecte, le tri, le conditionnement et l’exportation internationale de Textiles, Linge et Chaussures (TLC) de seconde main</strong>. Grâce à nos installations et à notre réseau de partenaires et fournisseurs européens, nous assurons un <strong>approvisionnement fiable et un suivi complet</strong>, de la collecte jusqu’à l’exportation.</p>
+
+<p>Nous proposons aux <strong>grossistes, importateurs, distributeurs et revendeurs professionnels</strong> une gamme adaptée aux différents marchés internationaux, comprenant :</p>
+
+<p class="about-products">
+    Crème Été – Crème Hiver – Grade A Été – Grade A Hiver – Grade B Été – Grade B Hiver – Original Camion 18 tonnes – Chaussures & Sacs – Matières de recyclage
+</p>
+
+</p>`,
+aboutText2: "Nos marchandises sont commercialisées exclusivement <strong>par conteneurs entiers de 20 ou 40 pieds</strong>, sur devis, avec des solutions adaptées aux besoins de nos clients professionnels. Grâce à notre organisation et à notre réseau européen, <strong>AMIRATEX assure des approvisionnements réguliers et des exportations vers les marchés internationaux.</strong>",
     aboutProcessTitle: "Nos pays partenaires en Europe",
     timelineCollectTitle: "France",
     timelineCollectText: "Partenariats établis pour la collecte et l'approvisionnement local.",
@@ -806,8 +831,16 @@ requestQuote: "Demander un devis"
     aboutMainTitle: "Your Trusted European Partner",
     aboutSubtitle: "Collection • Sorting • Quality Control • International Export",
     aboutTrustedTitle: "AMIRATEX, Your Trusted Partner",
-    aboutText1: "<strong>AMIRATEX</strong> specializes in the collection, sorting and export of second-hand clothing and textiles for international markets.",
-    aboutText2: "Thanks to our extensive European partner network, we carefully select quality textiles meeting the highest international standards.",
+     aboutText1: `<p><strong>AMIRATEX</strong> is a French company specializing in the <strong>collection, sorting, conditioning and international export of second-hand Textiles, Household Linen and Footwear (TLC)</strong>. Thanks to our facilities and our network of European partners and suppliers, we ensure a <strong>reliable supply and comprehensive management</strong>, from collection through to export.</p>
+
+<p>We offer <strong>wholesalers, importers, distributors and professional resellers</strong> a range adapted to different international markets, including:</p>
+
+<p class="about-products">
+    Summer Crème – Winter Crème – Grade A Summer – Grade A Winter – Grade B Summer – Grade B Winter – Original Truck 18 tonnes – Shoes & Bags – Recycling Materials
+</p>
+
+</p>`,
+    aboutText2: "Our goods are sold exclusively <strong>by full 20- or 40-foot containers</strong>, on a quotation basis, with solutions adapted to the needs of our professional customers. Thanks to our organization and European network, <strong>AMIRATEX ensures regular supply and exports to international markets.</strong>.",
     aboutSummary: "Through our facilities and European network, AMIRATEX provides end-to-end support from collection to international transport, with exports worldwide.",
     aboutPresence: "Our Presence Across Europe",
     aboutPresenceText: "Our sourcing network covers Europe's leading second-hand textile markets.",
@@ -2572,15 +2605,25 @@ window.attachGalleryNav = attachGalleryNav;
   });
 
   // ===== Drag / Swipe =====
-  function onPointerDown(e) {
-    if (e.target.closest(".slider-arrow")) return;
-    isDragging = true;
-    stopAutoplay();
-    track.classList.add("is-dragging");
-    startX = e.type.indexOf("touch") >= 0 ? e.touches[0].clientX : e.clientX;
-    startPos = position;
+function onPointerDown(e) {
+  if (e.target.closest(".slider-arrow")) return;
+
+  isDragging = true;
+  stopAutoplay();
+  track.classList.add("is-dragging");
+
+  startX = e.type.includes("touch")
+    ? e.touches[0].clientX
+    : e.clientX;
+
+  startPos = position;
+
+  // Important :
+  // Ne pas bloquer le clic sur mobile au simple toucher.
+  if (!e.type.includes("touch")) {
     e.preventDefault();
   }
+}
 
   function onPointerMove(e) {
     if (!isDragging) return;
