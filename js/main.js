@@ -680,7 +680,7 @@ about1: `<p><strong>AMIRATEX</strong> est un opérateur français spécialisé d
 <p>Nous proposons aux <strong>grossistes, importateurs, distributeurs et revendeurs professionnels</strong> une gamme adaptée aux différents marchés internationaux, comprenant :</p>
 
 <p class="about-products">
-    Crème Été – Crème Hiver – Grade A Été – Grade A Hiver – Grade B Été – Grade B Hiver – Original Camion 18 tonnes – Chaussures & Sacs – Matières de recyclage
+    Crème Été – Crème Hiver – Grade A Été – Grade A Hiver – Grade B Été – Grade B Hiver – Original Camion 18 tonnes – Chaussures & Sacs – Matières de recyclage - Ecrémé – Mixte Tropical – Palette Export 500 kg minimum
 </p>
 
 </p>`,
@@ -836,12 +836,12 @@ requestQuote: "Demander un devis"
 <p>We offer <strong>wholesalers, importers, distributors and professional resellers</strong> a range adapted to different international markets, including:</p>
 
 <p class="about-products">
-    Summer Crème – Winter Crème – Grade A Summer – Grade A Winter – Grade B Summer – Grade B Winter – Original Truck 18 tonnes – Shoes & Bags – Recycling Materials
+    Summer Crème – Winter Crème – Grade A Summer – Grade A Winter – Grade B Summer – Grade B Winter – Original Truck 18 tonnes – Shoes & Bags – Recycling Materials - Skimmed – Tropical Mix – Export Pallet 500 kg minimum
 </p>
 
 </p>`,
     aboutText2: "Our goods are sold exclusively <strong>by full 20- or 40-foot containers</strong>, on a quotation basis, with solutions adapted to the needs of our professional customers. Thanks to our organization and European network, <strong>AMIRATEX ensures regular supply and exports to international markets.</strong>.",
-    aboutSummary: "Through our facilities and European network, AMIRATEX provides end-to-end support from collection to international transport, with exports worldwide.",
+    /*aboutSummary: "Through our facilities and European network, AMIRATEX provides end-to-end support from collection to international transport, with exports worldwide.",*/
     aboutPresence: "Our Presence Across Europe",
     aboutPresenceText: "Our sourcing network covers Europe's leading second-hand textile markets.",
     aboutCommitment: "Our Commitment",
