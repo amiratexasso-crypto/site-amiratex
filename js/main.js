@@ -1276,29 +1276,7 @@ document.documentElement.lang = lang;
       button.classList.toggle("active", button.dataset.lang === lang);
       button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
     });
-const quoteBtn = document.getElementById('detail-quote');
-const detailView = document.getElementById("product-detail-view");
 
-if (quoteBtn) {
-  quoteBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    // 1. Fermer la vue détaillée de la même manière que votre code le gère
-    if (detailView) {
-      detailView.style.display = "none"; // Masque la vue
-      
-    }
-
-    // 2. S'assurer que le body et les interactions sont libérés
-    document.body.style.overflow = ""; // Réactive le scroll de la page
-    
-    // 3. Rediriger vers le formulaire de contact 
-    const contactSection = document.getElementById('contact'); 
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-}
     // Met à jour tous les badges produits multilingues selon la langue active
     document.querySelectorAll('.product-badge').forEach((badge) => {
       const frText = badge.dataset.badgeFr;
@@ -1326,6 +1304,10 @@ if (quoteBtn) {
     setHtml("#detail-content-extra", data?.extra || "");
     setAttr("#detail-download", "href", media?.download || "#");
     setText("#detail-download", text[currentLanguage]?.detailDownload || text.fr.detailDownload);
+    setAttr("#detail-download", "href", media?.download || "#");
+setText("#detail-download", text[currentLanguage]?.detailDownload || text.fr.detailDownload);
+// Toujours garder le bouton devis sur #contact
+setAttr("#detail-quote", "href", "#contact");
   }
 
   // Fonctions globales accessibles depuis d'autres scripts ou depuis la console.
@@ -2467,40 +2449,47 @@ mediaBlock.appendChild(wrapper);
 
   // Ouvre la vue détail d'un produit et remplit le contenu avec les données localisées.
   function openDetailView(cardId) {
-    const lang = window.amiratexCurrentLanguage?.() || "fr";
-    const localized =
-      window.amiratexDetailProducts?.[lang]?.[cardId] ||
-      window.amiratexDetailProducts?.fr?.[cardId];
-    const media =
-      window.amiratexDetailMedia?.[lang]?.[cardId] ||
-      window.amiratexDetailMedia?.fr?.[cardId];
-    if (!localized && !media) return;
+  const lang = window.amiratexCurrentLanguage?.() || "fr";
+  const localized =
+    window.amiratexDetailProducts?.[lang]?.[cardId] ||
+    window.amiratexDetailProducts?.fr?.[cardId];
+  const media =
+    window.amiratexDetailMedia?.[lang]?.[cardId] ||
+    window.amiratexDetailMedia?.fr?.[cardId];
+  if (!localized && !media) return;
 
-    detailTitle.textContent = localized?.title || "";
-    detailDesc.textContent = localized?.desc || "";
-    detailExtra.innerHTML = localized?.extra || "";
-    detailDownload.href = media?.download || "#";
-    detailDownload.textContent =
-      window.amiratexText?.("detailDownload") || "Télécharger le catalogue";
+  detailTitle.textContent = localized?.title || "";
+  detailDesc.textContent = localized?.desc || "";
+  detailExtra.innerHTML = localized?.extra || "";
+  detailDownload.href = media?.download || "#";
+  detailDownload.textContent =
+    window.amiratexText?.("detailDownload") || "Télécharger le catalogue";
 
-    loadGallery(media?.gallery || []);
-    attachGalleryNav();
-
-    detailView.style.display = "block";
-    document.body.style.overflow = "hidden";
+  // Le bouton devis doit toujours pointer vers #contact (jamais un PDF)
+  const quoteLink = document.getElementById("detail-quote");
+  if (quoteLink) {
+    quoteLink.setAttribute("href", "#contact");
+    quoteLink.removeAttribute("download");
   }
+
+  loadGallery(media?.gallery || []);
+  attachGalleryNav();
+
+  detailView.style.display = "block";
+  document.body.style.overflow = "hidden";
+}
 window.openDetailView = openDetailView;
 window.loadGallery = loadGallery;
 window.attachGalleryNav = attachGalleryNav;
-  // Ajoute un clic sur chaque produit du slider pour ouvrir la vue détail.
-  document.querySelectorAll(".products-slider a").forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const cardId = this.getAttribute("href").replace("#", "");
-      openDetailView(cardId);
-    });
-  });
 
+// Ajoute un clic sur chaque produit du slider pour ouvrir la vue détail.
+document.querySelectorAll(".products-slider a").forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const cardId = this.getAttribute("href").replace("#", "");
+    openDetailView(cardId);
+  });
+});
   // Fermeture de la vue détail lorsqu'on clique sur la croix.
   detailClose.addEventListener("click", () => {
     detailView.style.display = "none";
@@ -3316,3 +3305,119 @@ if (quoteBtn) {
     }
   });
 }
+/* --------------------------------------------------------------------------
+   VUE DÉTAILLÉE : « Demander un devis » → section contact (jamais la visionneuse PDF)
+   -------------------------------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const quoteBtn = document.getElementById("detail-quote");
+  if (quoteBtn) {
+    // Forcer le href correct (évite toute contamination par un lien catalogue)
+    quoteBtn.setAttribute("href", "#contact");
+    quoteBtn.removeAttribute("download");
+
+    quoteBtn.addEventListener(
+      "click",
+      (event) => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        const detail = document.getElementById("product-detail-view");
+        if (detail) detail.style.display = "none";
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      },
+      true // capture : s'exécute avant le gestionnaire PDF
+    );
+  }
+
+  document.querySelector(".detail-close")?.addEventListener(
+    "click",
+    () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    },
+    true
+  );
+});
+/* --------------------------------------------------------------------------
+   14. VISIONNEUSE PDF : ouverture intégrée des catalogues du site
+   -------------------------------------------------------------------------- */
+(() => {
+  if (window.amiratexPdfViewerReady) return;
+  window.amiratexPdfViewerReady = true;
+
+  const viewer = document.getElementById("pdf-viewer");
+  const frame = document.getElementById("pdf-viewer-frame");
+  const title = document.getElementById("pdf-viewer-title");
+  const download = document.getElementById("pdf-viewer-download");
+  const newTab = document.getElementById("pdf-viewer-new-tab");
+  const closeButton = document.getElementById("pdf-viewer-close");
+  if (!viewer || !frame || !title || !download || !newTab || !closeButton) return;
+
+  let opener = null;
+  let previousOverflow = "";
+
+  function closePdfViewer() {
+    if (!viewer.classList.contains("is-open")) return;
+    viewer.classList.remove("is-open");
+    viewer.setAttribute("aria-hidden", "true");
+    frame.src = "about:blank";
+    const detailView = document.getElementById("product-detail-view");
+    // Ne conserver le verrouillage que si la fiche produit est encore ouverte.
+    document.body.style.overflow =
+      detailView?.style.display === "block" ? previousOverflow : "";
+    document.documentElement.style.overflow = "";
+    opener?.focus();
+  }
+
+  function openPdfViewer(link) {
+    const pdfUrl = link.href;
+    const productTitle =
+      link.closest(".product-card")?.querySelector("h3")?.textContent ||
+      document.getElementById("detail-title")?.textContent;
+    title.textContent = productTitle
+      ? `Catalogue - ${productTitle.trim()}`
+      : "Catalogue AMIRATEX";
+    frame.src = `${pdfUrl}#toolbar=1&navpanes=0`;
+    download.href = pdfUrl;
+    newTab.href = pdfUrl;
+    opener = link;
+    previousOverflow = document.body.style.overflow;
+    viewer.classList.add("is-open");
+    viewer.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    closeButton.focus();
+  }
+
+  document.addEventListener("click", (event) => {
+    // Ne jamais intercepter le bouton « Demander un devis »
+    if (event.target.closest("#detail-quote")) return;
+
+    const link = event.target.closest(
+      'a[href*="catalogues/"][href$=".pdf"], a[href*="catalogues/"][href*=".pdf#"]'
+    );
+    if (!link) return;
+
+    // Ignorer les ancres et le bouton devis
+    const hrefAttr = link.getAttribute("href") || "";
+    if (
+      link.id === "detail-quote" ||
+      hrefAttr.startsWith("#") ||
+      hrefAttr === "#contact"
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    openPdfViewer(link);
+  });
+
+  closeButton.addEventListener("click", closePdfViewer);
+  viewer.addEventListener("click", (event) => {
+    if (event.target === viewer) closePdfViewer();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closePdfViewer();
+  });
+})();
