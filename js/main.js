@@ -1,6 +1,16 @@
 
+/* ===========================================================================
+   AMIRATEX — SCRIPTS DE LA PAGE
+   Les zones fonctionnelles sont nommées selon l'ordre de index.html.
+   Les données communes sont conservées en premier car elles sont utilisées
+   par plusieurs sections de la page.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   DONNÉES PARTAGÉES : traductions et contenu détaillé des produits
+   -------------------------------------------------------------------------- */
 (() => {
-  // SECTION: PRODUCT DATA & DETAIL VIEW
+  // Données des cartes et de la vue détaillée des produits.
   // Dictionnaire de titres et descriptions pour chaque produit.
   // Utilisé pour mettre à jour le texte des cartes produits selon la langue active.
   const productLabels = {
@@ -1332,10 +1342,10 @@ if (quoteBtn) {
   });
 })();
 
+/* --------------------------------------------------------------------------
+   04. ACCUEIL / HERO : carrousel principal
+   -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-        /* ========================= */
-        /* SECTION: HERO SLIDER */
-        /* ========================= */
         // Gestion du slider dans la section hero.
         // Le slider avance automatiquement et peut être mis en pause au clic.
         const slides = document.querySelectorAll(".hero-slide");
@@ -1429,11 +1439,12 @@ document.addEventListener("DOMContentLoaded", () => {
           });
      
 
+/* --------------------------------------------------------------------------
+   03. EN-TÊTE, SOCIÉTÉ ET STATISTIQUES : langue et animations communes
+   -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*=====================================================
-            LANGUE
-    =====================================================*/
+    /* Langue : compatibilité avec les éléments utilisant data-fr / data-en. */
 
     let currentLang = localStorage.getItem("lang") || "fr";
 
@@ -1702,9 +1713,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-        /* ========================= */
-        /* SECTION: LIGHTBOX GALLERY */
-        /* ========================= */
+        /* ------------------------------------------------------------------
+           10. GALERIE : ouverture et navigation de la lightbox simple
+           ------------------------------------------------------------------ */
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-img");
         const closeLightbox = document.querySelector(".close-lightbox");
@@ -1817,8 +1828,10 @@ if (detailView && detailView.style.display === "block") {
         }
       });
 
-// SECTION: LOAD MORE PRODUCTS
-// Bouton "Voir plus" : révèle progressivement les produits masqués.
+/* --------------------------------------------------------------------------
+   09. PRODUITS : bouton « Voir plus » et cartes produit
+   -------------------------------------------------------------------------- */
+// Le bouton révèle progressivement les produits masqués.
       (function () {
         const hiddenCards = document.querySelectorAll(".product-card.hidden");
         const btnMore = document.getElementById("loadMoreBtn");
@@ -1858,7 +1871,9 @@ if (detailView && detailView.style.display === "block") {
       })();
 
 (function () {
-        // SECTION: CONTACT FORM
+        /* ------------------------------------------------------------------
+           11. CONTACT : envoi, validation et protection anti-spam
+           ------------------------------------------------------------------ */
         // Gestion du formulaire de contact avec EmailJS.
         // Si emailjs n'est pas chargé, on ne fait rien.
         if (typeof emailjs === "undefined") return;
@@ -2040,9 +2055,9 @@ if (detailView && detailView.style.display === "block") {
           console.warn("Lazy init failed", e);
         }
       });
-      /* ========================= */
-      /* MENU BURGER MOBILE */
-      /* ========================= */
+      /* --------------------------------------------------------------------
+         03. EN-TÊTE : ouverture et fermeture du menu mobile
+         -------------------------------------------------------------------- */
 
       const menuBtn = document.getElementById("mobile-menu");
       const nav = document.getElementById("nav-links");
@@ -2133,7 +2148,10 @@ document.querySelectorAll(".products-slider a").forEach((link) => {
         });
       });
 
-// View détail produit : ouverture de la fenêtre modale avec contenu localisé.
+/* --------------------------------------------------------------------------
+   09. PRODUITS : vue détaillée et galerie du produit sélectionné
+   -------------------------------------------------------------------------- */
+// Ouverture de la fenêtre détaillée avec contenu localisé.
 document.addEventListener("DOMContentLoaded", function () {
   const detailView = document.getElementById("product-detail-view");
   const galleryTrack = document.getElementById("gallery-track-main");
@@ -3035,6 +3053,9 @@ lb.addEventListener(
     });
   });
 });
+/* --------------------------------------------------------------------------
+   08. RÉSEAU MONDIAL : info-bulles et boutons de la carte
+   -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", function () {
   var box = document.getElementById("amiratexInfoBox");
   var regions = document.querySelectorAll(".amiratex-region");
@@ -3295,5 +3316,3 @@ if (quoteBtn) {
     }
   });
 }
-
-

@@ -1,3 +1,12 @@
+/* ===========================================================================
+   AMIRATEX — FEUILLE DE STYLES
+   Les blocs suivent l'ordre des sections dans index.html. Les correctifs
+   responsives restent à proximité de la section qu'ils adaptent.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. RÈGLES COMMUNES : variables, typographie et conteneurs
+   -------------------------------------------------------------------------- */
 html {
         scroll-behavior: smooth;
       }
@@ -43,7 +52,7 @@ html {
       }
 
       /* ========================= */
-      /* SECTION: HEADER */
+      /* 03. EN-TÊTE : logo, navigation, langues et menu mobile */
       /* ========================= */
 
       header {
@@ -118,7 +127,7 @@ html {
       }
 
       /* ========================= */
-      /* SECTION: TOPBAR */
+      /* 02. BARRE D'INFORMATIONS : adresse, téléphone et e-mail */
       /* ========================= */
 
       .topbar {
@@ -190,7 +199,7 @@ html {
       }
 
       /* ========================= */
-      /* SECTION: HERO */
+      /* 04. ACCUEIL / HERO : visuel principal, texte et boutons */
       /* ========================= */
 
       .hero {
@@ -336,7 +345,7 @@ html {
       }
 
       /* ========================= */
-      /* SECTION: ABOUT */
+      /* 05. SOCIÉTÉ : présentation, engagements et frise chronologique */
       /* ========================= */
 
       section {
@@ -679,7 +688,7 @@ html {
       }
 
       /* ========================= */
-      /* SECTION: SERVICES */
+      /* 07. LOGISTIQUE : services, processus et export */
 
       /* SERVICES PREMIUM */
       /* ========================= */
@@ -1053,7 +1062,7 @@ html {
       }
 
       /* ========================= */
-      /* SECTION: PRODUCTS */
+      /* 09. PRODUITS : carrousel, catalogue, cartes et vue détaillée */
       /* ========================= */
 
       /* ========================= */
@@ -1906,7 +1915,7 @@ body[data-lang="en"] .mini-product::after {
         }
       }
       /* ========================= */
-      /* PROCESS */
+      /* Sous-section logistique : étapes du processus. */
       /* ========================= */
 
       .process {
@@ -1948,7 +1957,7 @@ body[data-lang="en"] .mini-product::after {
       }
 
       /* ========================= */
-      /* LOGISTIC */
+      /* Sous-section logistique : informations complémentaires. */
       /* ========================= */
 
       .logistic-compact {
@@ -1973,11 +1982,11 @@ body[data-lang="en"] .mini-product::after {
       }
 
       /* ========================= */
-      /* STATS */
+      /* 06. CHIFFRES CLÉS : statistiques placées après la société */
       /* ========================= */
 
       /* ========================= */
-/* SECTION: STATS (après About) */
+/* 06. CHIFFRES CLÉS : styles détaillés et adaptations écran */
 /* ========================= */
 
 /* =========================================
@@ -2165,7 +2174,7 @@ section.stats,
     }
 }
       /* ========================= */
-      /* SECTION: GALLERY */
+      /* 10. GALERIE : médias et légendes au survol */
       /* ========================= */
 
       .gallery-grid {
@@ -2351,7 +2360,7 @@ body.lightbox-open #lightbox {
   visibility: visible !important;
 }
       /* ========================= */
-      /* SECTION: CONTACT */
+      /* 11. CONTACT : formulaire, validation et messages */
       /* ========================= */
 
       .contact {
@@ -2396,7 +2405,7 @@ body.lightbox-open #lightbox {
       }
 
       /* ========================= */
-      /* SECTION: FOOTER */
+      /* 12. PIED DE PAGE : liens, réseaux sociaux et mentions */
       /* ========================= */
 
       footer {
@@ -2431,7 +2440,7 @@ body.lightbox-open #lightbox {
       }
 
       /* ========================= */
-      /* WHATSAPP */
+      /* 13. BOUTON WHATSAPP FLOTTANT */
       /* ========================= */
 
       .whatsapp {
@@ -5218,6 +5227,9 @@ box-shadow:0 20px 40px rgba(0,0,0,.12);
    AMIRATEX - Section Réseau Mondial & Export
    ============================================================ */
    
+  /* ------------------------------------------------------------------------
+     08. RÉSEAU MONDIAL : carte interactive et destinations d'export
+     ------------------------------------------------------------------------ */
   .amiratex-net-section {
     font-family: inherit;
     max-width: 1120px;
