@@ -19,8 +19,8 @@
       ["Crème Hiver", "Articles hiver premium triés."],
       ["Grade A - Été", "Vêtements Grade A été pour export."],
       ["Grade A - Hiver", "Sélection hiver Grade A."],
-      ["Grade B - Été", "Articles Grade B été pour export."],
-      ["Grade B - Hiver", "Produits hiver Grade B triés."],
+      ["Grade B + C - Été", "Articles Grade B été pour export."],
+      ["Grade B + C - Hiver", "Produits hiver Grade B triés."],
       ["Original Camion 18T", "Original non trié, chargement complet."],
       ["Chaussures & Sacs", "Maroquinerie triée pour export."],
       ["Matière Recyclage", "Laine, jeans, coton recyclables."],
@@ -33,8 +33,8 @@
       ["Winter Cream", "Premium sorted winter items."],
       ["Grade A - Summer", "Grade A summer clothing for export."],
       ["Grade A - Winter", "Grade A winter selection."],
-      ["Grade B - Summer", "Grade B summer items for export."],
-      ["Grade B - Winter", "Sorted Grade B winter products."],
+      ["Grade B + C - Summer", "Grade B + C summer items for export."],
+      ["Grade B + C - Winter", "Sorted Grade B + C winter products."],
       ["Original 18T Truck", "Unsorted original, full truck load."],
       ["Shoes & Bags", "Sorted leather goods and shoes for export."],
       ["Recycling Material", "Recyclable wool, jeans and cotton."],
@@ -46,113 +46,178 @@
 
   // Contenus détaillés affichés dans la vue produit.
   // Chaque carte produit est identifiée par son id HTML (par exemple card-1, card-2...).
-  const detailProducts = {
-    fr: {
-      "card-1": {
-        title: "Crème Été",
-        desc: "Sélection premium été haute qualité, idéale pour l’export international.",
-        extra: `
-          <h3>Caractéristiques principales :</h3>
-          <ul>
-            <li>Qualité supérieure triée à la main</li>
-            <li>Vêtements légers et colorés d’été</li>
-            <li>Parfait pour les marchés européens et africains</li>
-            <li>Conditionnement en balles compressées</li>
-            <li>Grandes quantités disponibles toute l’année</li>
-          </ul>
-        `,
-      },
+
+const detailProducts = {
+  fr: {
+    "card-1": {
+      title: "Crème Été",
+      desc: "Une sélection premium de vêtements de seconde main soigneusement triés et contrôlés. Idéale pour les magasins de friperie, grossistes, revendeurs, boutiques en ligne et importateurs.",
+      extra: `
+        <h3>Caractéristiques principales :</h3>
+        <ul>
+          <li>Qualité supérieure triée à la main</li>
+          <li>Vêtements légers et colorés d’été</li>
+          <li>Idéale pour les marchés européens et africains</li>
+          <li>Conditionnement en sacs de 25 kg ou balles compressées de 45 kg</li>
+          <li>Grandes quantités disponibles toute l’année</li>
+        </ul>
+
+        <h3>Commandes :</h3>
+
+        <h3>🇪🇺 Europe</h3>
+        <ul>
+          <li><strong>500 kg minimum.</strong></li>
+          <li><strong>Frais de transport : 350 €/ palette (forfait)</strong></li>
+          <li>Livraison à domicile partout en Europe, selon la zone desservie.</li>
+        </ul>
+
+        <h3>🌍 International</h3>
+        <ul>
+          <li><strong>Export exclusivement par conteneurs 20 ou 40 pieds</strong></li>
+          <li>Préparation des commandes adaptée aux besoins du marché.</li>
+        </ul>
+      `,
+    },
+
+
       "card-2": {
         title: "Crème Hiver",
         desc: "Articles hiver premium triés avec soin pour l’export.",
         extra: `
           <h3>Points forts :</h3>
           <ul>
-            <li>Pulls, vestes, manteaux et polaires</li>
+            <li>Pulls, vestes, manteaux et polaires...</li>
             <li>Tri rigoureux par qualité et saison</li>
             <li>Excellente présentation et état</li>
             <li>Idéal pour les climats tempérés</li>
-          </ul>
+            <li>Conditionnement en sacs de 25 kg ou balles compressées de 45 kg</li>
+          <li>Grandes quantités disponibles toute l’année</li>
+        </ul>
+
+        <h3>Commandes :</h3>
+
+        <h3>🇪🇺 Europe</h3>
+        <ul>
+          <li><strong>500 kg minimum</strong></li>
+          <li><strong>Frais de transport : 350 €/ palette (forfait)</strong></li>
+          <li>Livraison à domicile partout en Europe, selon la zone desservie.</li>
+        </ul>
+
+        <h3>🌍 International</h3>
+        <ul>
+          <li><strong>Export exclusivement par conteneurs 20 ou 40 pieds</strong></li>
+          <li>Préparation des commandes adaptée aux besoins du marché.</li>
+        </ul>
+          
         `,
       },
       "card-3": {
-        title: "Grade A - Été",
-        desc: "Vêtements Grade A été de haute qualité destinés à l’export.",
-        extra: `
-          <h3>Caractéristiques :</h3>
-          <ul>
-            <li>Qualité Grade A, très bon état</li>
-            <li>Trié par catégorie et par saison</li>
-            <li>Excellente réputation sur le marché international</li>
-            <li>Chargements complets disponibles</li>
-          </ul>
-        `,
-      },
-      "card-4": {
-        title: "Grade A - Hiver",
-        desc: "Sélection hiver Grade A premium pour l’export.",
-        extra: `
-          <h3>Caractéristiques :</h3>
-          <ul>
-            <li>Vêtements chauds de qualité Grade A</li>
-            <li>Tri professionnel et contrôle qualité strict</li>
-            <li>Adapté aux marchés exigeants</li>
-          </ul>
-        `,
-      },
-      "card-5": {
-        title: "Grade B - Été",
-        desc: "Articles Grade B été à excellent rapport qualité/prix.",
-        extra: `
-          <h3>Caractéristiques :</h3>
-          <ul>
-            <li>Bon rapport qualité/prix</li>
-            <li>Qualité correcte et propre</li>
-            <li>Idéal pour les marchés émergents</li>
-            <li>Volumes importants disponibles</li>
-          </ul>
-        `,
-      },
-      "card-6": {
-        title: "Grade B - Hiver",
-        desc: "Produits hiver Grade B triés pour l’export.",
-        extra: `
-          <h3>Caractéristiques :</h3>
-          <ul>
-            <li>Vêtements d’hiver Grade B</li>
-            <li>Trié et nettoyé avec soin</li>
-            <li>Très bon rapport qualité/prix</li>
-          </ul>
-        `,
-      },
-      "card-7": {
-        title: "Original Camion 18T",
-        desc: "Désigne la collecte textile brute, telle qu'elle est récupérée directement dans les conteneurs ou lors de collectes en porte-à-porte. Il s'agit d'un produit non trié, non ouvert et non transformé, contenant un mélange de vêtements, chaussures et maroquinerie, dans l'état exact où les donateurs les ont déposés.",
-        extra: `
-          <h3>Description :</h3>
-          <p>Original 18T correspond à la collecte brute telle qu'elle est récupérée depuis les conteneurs ou lors de collectes porte-à-porte. Les lots sont livrés non triés, non ouverts et non transformés.</p>
-          <h3>Caractéristiques :</h3>
-          <ul>
-            <li>Collecte textile brute depuis conteneurs ou collectes porte-à-porte</li>
-            <li>Produit non trié, non ouvert et non transformé</li>
-            <li>Mélange de vêtements, chaussures et maroquinerie</li>
-            <li>Livré dans l'état exact déposé par les donateurs</li>
-          </ul>
-        `,
-      },
-      "card-8": {
-        title: "Chaussures & Sacs",
-        desc: "Maroquinerie et chaussures triées pour l’export.",
-        extra: `
-          <h3>Caractéristiques :</h3>
-          <ul>
-            <li>Chaussures triées par paire</li>
-            <li>Sacs et articles de maroquinerie</li>
-            <li>Qualité export sélectionnée</li>
-            <li>Conditionnement en sacs de 25 kg</li>
-          </ul>
-        `,
-      },
+  title: "Grade A - Été",
+  desc: "Vêtements Grade A été de haute qualité destinés à l’export.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li><strong>Prix : 2,00 € / kg</strong></li>
+      <li>Qualité Grade A (très bon état)</li>
+      <li>Trié par catégorie et par saison</li>
+      <li>Excellente réputation sur le marché international</li>
+       <li><strong>Export exclusivement par conteneurs 20 ou 40 pieds</strong></li>
+    </ul>
+  `,
+  download: "catalogues/catalogue AMIRATEX.pdf",
+  gallery: [{type: "img", src: "images/tri-service.webp"}]
+},
+
+"card-4": {
+  title: "Grade A - Hiver",
+  desc: "Sélection hiver Grade A premium pour l’export.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li><strong>Prix : 2,00 € / kg</strong></li>
+      <li>Vêtements chauds de qualité Grade A</li>
+      <li>Tri professionnel et contrôle qualité strict</li>
+      <li>Adapté aux marchés exigeants</li>
+       <li><strong>Export exclusivement par conteneurs 20 ou 40 pieds</strong></li>
+    </ul>
+  `,
+  download: "catalogues/catalogue AMIRATEX.pdf",
+  gallery: [{type: "img", src: "images/balles_stock.webp"}]
+},
+
+"card-5": {
+  title: "Grade B + C - Été",
+  desc: "Articles Grade B + C été à excellent rapport qualité/prix.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul> <li>Homme/ Femme/ Enfant multicouleurs</li>
+      <li><strong>Prix : 0,90 € / kg</strong></li>
+      <li>Bon rapport qualité/prix</li>
+      <li>Qualité correcte et propre</li>
+      <li>Idéal pour les marchés émergents</li>
+       <li>balles de 500 kg</li>
+       <li><strong>Export exclusivement par conteneurs 20 ou 40 pieds</strong></li>
+    </ul>
+  `,
+  download: "catalogues/CATALOGUE_GRADE_B_ETE_GLOBAL.pdf",
+  gallery: [{type: "img", src: "images/balles2.webp"}]
+},
+
+"card-6": {
+  title: "Grade B + C - Hiver",
+  desc: "Produits hiver Grade B + C triés pour l’export.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+     <li>Homme/ Femme/ Enfant multicouleurs</li>
+      <li><strong>Prix : 0,90 € / kg</strong></li>
+      <li>Vêtements d’hiver Grade B</li>
+      <li>Trié et nettoyé avec soin</li>
+      <li>Très bon rapport qualité/prix</li>
+       <li>Balles de 500 kg</li>
+       <li><strong>Export exclusivement par conteneurs 20 ou 40 pieds</strong></li>
+    </ul>
+  `,
+  download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
+  gallery: [{type: "img", src: "images/balles4.webp"}]
+},
+      
+"card-7": {
+  title: "Original Camion 18 ou 21 T",
+  desc: "Collecte textile brute, récupérée directement depuis les conteneurs ou lors de collectes en porte-à-porte. Produit non trié, non ouvert et non transformé, comprenant un mélange de vêtements, chaussures et maroquinerie, dans l’état exact où les articles ont été déposés par les donateurs.",
+  extra: `
+        <h3>Caractéristiques :</h3>
+    <ul>
+      <li>Collecte textile brute depuis conteneurs ou collectes porte-à-porte</li>
+      <li>Produit non trié, non ouvert et non transformé</li>
+      <li>Mélange de vêtements, chaussures et maroquinerie</li>
+      <li>Livré dans l’état exact déposé par les donateurs</li>
+    </ul>
+
+    <h3>Formats de chargement :</h3>
+    <ul>
+      <li><strong>Camion Original : 18 à 21 tonnes</strong></li>
+      <li><strong>Conteneur 40 pieds : environ 20 tonnes</strong> en Big Bags</li>
+      <li><strong>Camion bâché : environ 17 tonnes</strong> en petits sacs (Small bags )</li>
+    </ul>
+  `,
+},
+
+"card-8": {
+  title: "Chaussures mixtes & Sacs",
+  desc: "Une sélection de chaussures et de sacs de seconde main soigneusement triés, adaptée aux marchés professionnels et à l’export international.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li>Chaussures mixtes : Hommes, Femmes et Enfants</li>
+      <li>Chaussures triées par paire</li>
+      <li>Disponibles en <strong>Grade A et Grade B</strong></li>
+      <li>Sacs et articles de maroquinerie</li>
+      <li>Qualité sélectionnée pour l’export</li>
+      <li>Conditionnement en sacs de 25 kg</li>
+    </ul>
+  `,
+},
       "card-9": {
         title: "Matière Recyclage",
         desc: "Textiles recyclables : laine, jeans, coton, etc.",
@@ -176,6 +241,10 @@
           <ul>
             <li>Articles triés une première fois puis séparés comme second choix</li>
             <li>Peut inclure des vêtements présentant des signes d'exposition en magasin</li>
+            <li>Conditionnement en sacs de 5 et 8 kg</li>
+            <li>Conditionnement en balles selon demande</li>
+            <li>Chargement en camion bâché: 15 tonnes</li>
+            <li>Chargement en contenair maritime 40 pieds: 11 tonnes</li>
             <li>Bonne option pour marchés à prix compétitif</li>
             <li>Conditionnement en balles selon demande</li>
           </ul>
@@ -186,19 +255,19 @@
   desc: "Textiles seconde main mixte (hommes/femmes) légers et adaptés aux climats tropicaux.",
   extra: `
     <h3>Description :</h3>
-    <p>Textiles seconde main mixte composés d’articles légers pour hommes et femmes, idéaux pour les climats chauds et les saisons estivales.</p>
+    <p>Textiles seconde main mixte composés d’articles légers pour hommes, femmes et enfants, idéaux pour les climats chauds et les saisons estivales.</p>
     
     <h3>Caractéristiques principales :</h3>
     <ul>
-      <li>Sélection mixte hommes et femmes</li>
+      <li>Sélection mixte hommes, femmes et enfants</li>
       <li>Pièces légères et respirantes (coton, lin, viscose...)</li>
-      <li>Shorts, t-shirts, robes d’été, chemises légères</li>
+      <li>Shorts, t-shirts, robes d’été, chemises légères, linge de maison léger,lingerie...</li>
       <li>Parfait pour l’export vers régions tropicales</li>
     </ul>
 
     <h3>Conditionnement standard :</h3>
     <ul>
-      <li>Balles compressées de 45 kg, 55 kg, 80 kg ou 100 kg</li>
+      <li>Balles compressées de 45 kg, 55 kg, 80 kg, 100 kg ou 500 kg</li>
       <li>Emballage plastique haute densité cerclé et étiqueté</li>
     </ul>
 
@@ -206,11 +275,12 @@
     <ul>
       <li>Conteneur 20 pieds : environ 10 à 12 tonnes</li>
       <li>Conteneur 40 pieds HC : environ 24 à 28 tonnes</li>
+      <li>Disponibilité : 40 conteneurs/ mois</li>
     </ul>
   `
 },
 "card-12": {
-  title: "Palette Export 500 kg",
+  title: "Palette Export 500 kg qualité crème - Europe uniquement",
   desc: "Export en palette dès 500 kg avec livraison à domicile. Frais de transport : +350 €.",
   extra: `
     <h3>Description :</h3>
@@ -219,126 +289,194 @@
     <h3>Caractéristiques :</h3>
     <ul>
       <li>Quantité minimum : 500 kg</li>
+      <li>Qualité : Crème (sélectionnée)</li>
       <li>Livraison à domicile disponible</li>
-      <li>Frais de transport : 350 € (forfait)</li>
+      <li>Prix : <strong>5 €/kg crème été, 4,50 €/kg crème hiver</strong></li>
+      <li>Frais de transport : 350 €/ palette (forfait)</li>
       <li>Idéal pour les petits et moyens volumes</li>
     </ul>
 
     <h3>Conditionnement :</h3>
     <ul>
       <li>Palette standard sécurisée</li>
-      <li>Emballage professionnel adapté à l’export</li>
+      <li>Emballage professionnel adapté</li>
     </ul>
   `
 }
     },
     
-    en: {
-      "card-1": {
-        title: "Summer Cream",
-        desc: "Premium high-quality summer selection, ideal for international export.",
-        extra: `
-          <h3>Main features:</h3>
-          <ul>
-            <li>Superior quality, hand sorted</li>
-            <li>Light and colorful summer clothing</li>
-            <li>Suitable for European and African markets</li>
-            <li>Packed in compressed bales</li>
-            <li>Large quantities available all year round</li>
-          </ul>
-        `,
-      },
+    
+en: {
+  "card-1": {
+    title: "Summer Cream",
+    desc: "A premium selection of carefully sorted and quality-controlled second-hand clothing. Ideal for thrift stores, wholesalers, resellers, online retailers and importers.",
+    extra: `
+      <h3>Key Features:</h3>
+      <ul>
+        <li>High-quality clothing, hand-sorted and carefully selected</li>
+        <li>Lightweight and colorful summer clothing</li>
+        <li>Ideal for European and African markets</li>
+        <li>Available in 25 kg bags or 45 kg compressed bales</li>
+        <li>Large quantities available all year round</li>
+      </ul>
+
+      <h3>Orders:</h3>
+
+      <h3>🇪🇺 EUROPE</h3>
+      <ul>
+        <li><strong>Minimum order: 500 kg • Shipping costs: €350/pallet </strong></li>
+        <li>Home delivery throughout Europe, depending on the delivery area.</li>
+      </ul>
+
+      <h3>🌍 INTERNATIONAL</h3>
+      <ul>
+        <li><strong>Export exclusively by 20- or 40-foot containers</strong></li>
+        <li>Orders prepared according to the specific requirements of each market.</li>
+      </ul>
+    `,
+  },
+
+
       "card-2": {
         title: "Winter Cream",
         desc: "Premium winter items carefully sorted for export.",
         extra: `
           <h3>Highlights:</h3>
           <ul>
-            <li>Sweaters, jackets, coats and fleece items</li>
+            <li>Sweaters, jackets, coats and fleece items...</li>
             <li>Strict sorting by quality and season</li>
             <li>Excellent presentation and condition</li>
             <li>Ideal for temperate climates</li>
-          </ul>
+            <li>Available in 25 kg bags or 45 kg compressed bales</li>
+        <li>Large quantities available all year round</li>
+      </ul>
+
+      <h3>Orders:</h3>
+
+      <h3>🇪🇺 EUROPE</h3>
+      <ul>
+        <li><strong>Minimum order: 500 kg •Shipping costs: €350 / pallet</strong></li>
+        <li>Home delivery throughout Europe, depending on the delivery area.</li>
+      </ul>
+
+      <h3>🌍 INTERNATIONAL</h3>
+      <ul>
+        <li><strong>Export exclusively by 20- or 40-foot containers</strong></li>
+        <li>Orders prepared according to the specific requirements of each market.</li>
+      </ul>
+          
         `,
       },
-      "card-3": {
-        title: "Grade A - Summer",
-        desc: "High-quality Grade A summer clothing for export.",
-        extra: `
-          <h3>Features:</h3>
-          <ul>
-            <li>Grade A quality, very good condition</li>
-            <li>Sorted by category and season</li>
-            <li>Strong reputation on international markets</li>
-            <li>Full loads available</li>
-          </ul>
-        `,
-      },
-      "card-4": {
-        title: "Grade A - Winter",
-        desc: "Premium Grade A winter selection for export.",
-        extra: `
-          <h3>Features:</h3>
-          <ul>
-            <li>Warm Grade A quality clothing</li>
-            <li>Professional sorting and strict quality control</li>
-            <li>Suitable for demanding markets</li>
-          </ul>
-        `,
-      },
-      "card-5": {
-        title: "Grade B - Summer",
-        desc: "Grade B summer items with excellent value for money.",
-        extra: `
-          <h3>Features:</h3>
-          <ul>
-            <li>Good value for money</li>
-            <li>Clean and correct quality</li>
-            <li>Ideal for emerging markets</li>
-            <li>Large volumes available</li>
-          </ul>
-        `,
-      },
-      "card-6": {
-        title: "Grade B - Winter",
-        desc: "Sorted Grade B winter products for export.",
-        extra: `
-          <h3>Features:</h3>
-          <ul>
-            <li>Grade B winter clothing</li>
-            <li>Carefully sorted and cleaned</li>
-            <li>Very good value for money</li>
-          </ul>
-        `,
-      },
-      "card-7": {
-        title: "Original 18T Truck",
-        desc: "Refers to raw collected textiles as retrieved directly from containers or during door-to-door collections. This is an unsorted, unopened and unprocessed product containing a mix of clothing, shoes and leather goods in the exact condition donors left them.",
-        extra: `
-          <h3>Description:</h3>
-          <p>Original 18T denotes raw collections taken from containers or door-to-door pickups. Lots are delivered unsorted, unopened and unprocessed.</p>
-          <h3>Features:</h3>
-          <ul>
-            <li>Raw textile collection from containers or door-to-door pickups</li>
-            <li>Unsorted, unopened and unprocessed product</li>
-            <li>Contains a mixture of clothing, shoes and leather goods</li>
-            <li>Delivered in the exact condition left by donors</li>
-          </ul>
-        `,
-      },
-      "card-8": {
-        title: "Shoes & Bags",
-        desc: "Sorted shoes and leather goods for export.",
-        extra: `
-          <h3>Features:</h3>
-          <ul>
-            <li>Shoes sorted by pair</li>
-            <li>Bags and leather goods</li>
-            <li>Selected export quality</li>
-            <li>Packed in 25 kg bags</li>
-          </ul>
-        `,
-      },
+     "card-3": {
+  title: "Grade A - Summer",
+  desc: "High-quality Grade A summer clothing intended for export.",
+  extra: `
+    <h3>Key Features:</h3>
+    <ul>
+      <li><strong>Price: €2.00 / kg</strong></li>
+      <li>Grade A quality (very good condition)</li>
+      <li>Sorted by category and season</li>
+      <li>Excellent reputation on the international market</li>
+      <li>Full loads available</li>
+      <li><strong>Export exclusively by 20- or 40-foot containers</strong></li>
+    </ul>
+  `,
+  download: "catalogues/catalogue AMIRATEX.pdf",
+  gallery: [{type: "img", src: "images/tri-service.webp"}]
+},
+
+"card-4": {
+  title: "Grade A - Winter",
+  desc: "Premium Grade A winter selection for export.",
+  extra: `
+    <h3>Key Features:</h3>
+    <ul>
+      <li><strong>Price: €2.00 / kg</strong></li>
+      <li>Warm Grade A quality clothing</li>
+      <li>Professional sorting and strict quality control</li>
+      <li>Suitable for demanding markets</li>
+      <li><strong>Export exclusively by 20- or 40-foot containers</strong></li>
+    </ul>
+  `,
+  download: "catalogues/catalogue AMIRATEX.pdf",
+  gallery: [{type: "img", src: "images/balles_stock.webp"}]
+},
+
+"card-5": {
+  title: "Grade B + C - Summer",
+  desc: "Grade B + C summer items offering excellent value for money.",
+  extra: `
+    <h3>Features:</h3>
+    <ul>
+      <li>Men / Women / Children, assorted colors</li>
+      <li><strong>Price: €0.90 / kg</strong></li>
+      <li>Excellent value for money</li>
+      <li>Good and clean quality</li>
+      <li>Ideal for emerging markets</li>
+      <li>500 kg bales</li>
+      <li><strong>Export exclusively by 20- or 40-foot containers</strong></li>
+    </ul>
+  `,
+  download: "catalogues/CATALOGUE_GRADE_B_ETE_GLOBAL.pdf",
+  gallery: [{type: "img", src: "images/balles2.webp"}]
+},
+
+"card-6": {
+  title: "Grade B + C - Winter",
+  desc: "Sorted Grade B + C winter products for export.",
+  extra: `
+    <h3>Features:</h3>
+    <ul>
+      <li>Men / Women / Children, assorted colors</li>
+      <li><strong>Price: €0.90 / kg</strong></li>
+      <li>Grade B winter clothing</li>
+      <li>Carefully sorted and cleaned</li>
+      <li>Very good value for money</li>
+      <li>500 kg bales</li>
+      <li><strong>Export exclusively by 20- or 40-foot containers</strong></li>
+    </ul>
+  `,
+  download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
+  gallery: [{type: "img", src: "images/balles4.webp"}]
+},
+      
+"card-7": {
+  title: "Original Truck 18 or 21 T",
+  desc: "Raw collected textiles, collected directly from textile collection containers or through door-to-door collection. The goods are unsorted, unopened and unprocessed, consisting of a mixture of clothing, shoes and leather goods, in the exact condition in which they were deposited by donors.",
+  extra: `
+       <h3>Key Features:</h3>
+    <ul>
+      <li>Raw textile collection from containers or door-to-door collection</li>
+      <li>Unsorted, unopened and unprocessed goods</li>
+      <li>Mixed clothing, shoes and leather goods</li>
+      <li>Delivered in the exact condition in which the items were deposited by donors</li>
+    </ul>
+
+    <h3>Loading Options:</h3>
+    <ul>
+      <li><strong>Original Truck: 18 to 21 tonnes</strong></li>
+      <li><strong>40-foot container: approximately 20 tonnes</strong> in Big Bags</li>
+      <li><strong>Covered Truck: approximately 17 tonnes</strong> in Small Bags</li>
+    </ul>
+  `,
+},
+
+
+     "card-8": {
+  title: "Mixed Shoes & Bags",
+  desc: "A selection of carefully sorted second-hand shoes and bags, suitable for professional markets and international export.",
+  extra: `
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Mixed shoes: Men, Women & Children</li>
+      <li>Shoes sorted and paired</li>
+      <li>Available in <strong>Grade A + Grade B</strong></li>
+      <li>Bags and leather goods</li>
+      <li>Selected export quality</li>
+      <li>Packed in 25 kg bags</li>
+    </ul>
+  `,
+},
       "card-9": {
         title: "Recycling Material",
         desc: "Recyclable textiles: wool, jeans, cotton and more.",
@@ -353,70 +491,79 @@
         `,
       },
       "card-10": {
-        title: "Appoint",
-        desc: "Considered the 'second-choice' — items remaining after an initial sort; also includes unsold shop returns previously displayed in stores.",
-        extra: `
-          <h3>Definition:</h3>
-          <p>Appoint refers to items kept after a first sorting pass — the second choice. It also covers unsold stock and store returns that have been displayed.</p>
-          <h3>Features:</h3>
-          <ul>
-            <li>Items separated after initial sorting as second-choice</li>
-            <li>May include garments showing signs of in-store display</li>
-            <li>Good option for value-driven markets</li>
-            <li>Packed in bales according to request</li>
-          </ul>
-        `,
-      },
-      "card-11": {
+  title: "Ecrémé, Appoint",
+  desc: "Considered the “second-choice associative stock”: items remaining after an initial sorting process. It also includes unsold items and store returns that were previously displayed in shops.",
+  extra: `
+    <h3>Definition:</h3>
+    <p>Ecrémé refers to items retained after the initial sorting process — the second choice. It also includes unsold items and store returns that have previously been displayed in shops.</p>
+
+    <h3>Features:</h3>
+    <ul>
+      <li>Items sorted once and then separated as second-choice stock</li>
+      <li>May include clothing showing signs of having been displayed in shops</li>
+      <li>Packaged in 5 kg and 8 kg bags</li>
+      <li>Baled packaging available upon request</li>
+      <li>Loading in tarpaulin-covered truck: 15 tonnes</li>
+      <li>Loading in 40-foot maritime container: 11 tonnes</li>
+      <li>Good option for price-competitive markets</li>
+      
+    </ul>
+  `,
+},
+     "card-11": {
   title: "Mixed Tropical",
-  desc: "Second-hand mixed clothing (men/women) light and suitable for tropical climates.",
+  desc: "Mixed second-hand textiles (men/women) that are lightweight and suitable for tropical climates.",
   extra: `
     <h3>Description:</h3>
-    <p>Second-hand mixed textiles for men and women, consisting of light items ideal for warm climates and summer seasons.</p>
+    <p>Mixed second-hand textiles consisting of lightweight items for men, women and children, ideal for hot climates and summer seasons.</p>
     
-    <h3>Main Features:</h3>
+    <h3>Key Features:</h3>
     <ul>
-      <li>Mixed selection for men and women</li>
-      <li>Light and breathable fabrics (cotton, linen, viscose...)</li>
-      <li>Shorts, t-shirts, summer dresses, light shirts</li>
+      <li>Mixed selection for men, women and children</li>
+      <li>Lightweight and breathable items (cotton, linen, viscose...)</li>
+      <li>Shorts, T-shirts, summer dresses, lightweight shirts, lightweight household linen, lingerie...</li>
       <li>Perfect for export to tropical regions</li>
     </ul>
 
-    <h3>Standard Packing:</h3>
+    <h3>Standard Packaging:</h3>
     <ul>
-      <li>Compressed bales of 45 kg, 55 kg, 80 kg or 100 kg</li>
-      <li>High-density plastic wrapping, strapped and labeled</li>
+      <li>Compressed bales of 45 kg, 55 kg, 80 kg, 100 kg or 500 kg</li>
+      <li>High-density plastic packaging, strapped and labelled</li>
     </ul>
 
     <h3>Export & Loading:</h3>
     <ul>
-      <li>20ft Container: approx. 10 to 12 tons</li>
-      <li>40ft HC Container: approx. 24 to 28 tons</li>
+      <li>20-foot container: approximately 10 to 12 tonnes</li>
+      <li>40-foot HC container: approximately 24 to 28 tonnes</li>
+      <li>Availability: 40 containers/month</li>
     </ul>
   `
 },
 "card-12": {
-  title: "Export Pallet 500 kg",
-  desc: "Pallet export from 500 kg with home delivery. Transport fee: +€350.",
+  title: "Pallet Export 500 kg Cream Quality – Europe Only",
+  desc: "Pallet export from 500 kg with home delivery, exclusively for Europe. Shipping costs: +€350.",
   extra: `
     <h3>Description:</h3>
-    <p>Pallet export solution starting from 500 kg minimum, with home delivery option.</p>
+    <p>Pallet export solution starting from a minimum of 500 kg, with home delivery. Available exclusively within Europe.</p>
 
     <h3>Features:</h3>
     <ul>
       <li>Minimum quantity: 500 kg</li>
-      <li>Home delivery available</li>
-      <li>Transport fee: €350 (flat rate)</li>
+      <li>Quality: Cream (selected)</li>
+      <li>Home delivery available (Europe only)</li>
+      <li>Price: <strong>€5/kg cream summer, €4.50/kg cream winter</strong></li>
+      <li>Shipping costs: €350 (flat rate)</li>
       <li>Ideal for small and medium volumes</li>
+      <li>Delivery restricted to European destinations only</li>
     </ul>
 
-    <h3>Packing:</h3>
+    <h3>Packaging:</h3>
     <ul>
-      <li>Standard secured pallet</li>
-      <li>Professional export packaging</li>
+      <li>Secure standard pallet</li>
+      <li>Professional adapted packaging</li>
     </ul>
   `
-},
+}
     },
   };
 
@@ -428,36 +575,46 @@
         download: "catalogues/CATALOGUE_CREME_ETE.pdf",
         gallery: [{ type: "img", src: "images/enfants2.webp",title: "Crème extra été " },
          { type: "img", src: "images/creme_extra.webp",title: "T-shirt crème extra été " },
-         { type: "img", src: "images/creme_chargee.webp",title: "chargement balles crème " },
+         
           { type: "img", src: "images/creme.webp",title: "Vêtements crème avant conditionnement " }, 
           { type: "img", src: "images/rummage enfant.webp",title: "Crème été extra enfant " },       
-          { type: "img", src: "images/installation-tri.webp",title: "installation de tri " },
-          { type: "img", src: "images/conditionnement-service.webp",title: "stockage balles crème été " },
+                    
           { type: "video", src: "videos/chargement_original_big_bags.mp4",title: "Chargement original big bags " },
         ],
       },
       "card-2": {
         download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
-        gallery: [
-          { type: "img", src: "images/balles2.webp",title: "Stockage balles hiver " },
-          { type: "img", src: "images/balles4.webp",title: "Balles hiver " },
+        gallery: [{ type: "img", src: "images/enfants2.webp",title: "Crème extra été " },
+         { type: "img", src: "images/creme_extra.webp",title: "T-shirt crème extra été " },
+         
+          { type: "img", src: "images/creme.webp",title: "Vêtements crème avant conditionnement " }, 
+          { type: "img", src: "images/rummage enfant.webp",title: "Crème été extra enfant " },       
+                    
+          
         ],
       },
       "card-3": {
         download: "catalogues/catalogue AMIRATEX.pdf",
-        gallery: [{ type: "img", src: "images/camion_ptte_balle_gradeA_B.webp",title: "Chargement Grade A été " },],
+        gallery: [{ type: "img", src: "images/presse.webp",title: "presse " },
+          { type: "img", src: "images/camion_ptte_balle_gradeA_B.webp",title: "Chargement grade A été " },
+        ],
       },
       "card-4": {
         download: "catalogues/catalogue AMIRATEX.pdf",
-        gallery: [{ type: "img", src: "images/balles_stock.webp",title: "Stockage  grade A hiver " }],
+        gallery: [{ type: "img", src: "images/presse.webp",title: "presse " },
+          { type: "img", src: "images/balles_stock.webp",title: "Stockage  grade A hiver " }],
       },
       "card-5": {
         download: "catalogues/CATALOGUE_GRADE_B_ETE_GLOBAL.pdf",
-        gallery: [{ type: "img", src: "images/balles2.webp",title: "Stocks grade B été " }],
+        gallery: [{ type: "img", src: "images/presse.webp",title: "presse " },
+          { type: "img", src: "images/balles2.webp",title: "Stocks grade B été " }],
       },
       "card-6": {
         download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
-        gallery: [{ type: "img", src: "images/balles4.webp",title: "Balles grade B Hiver " }],
+        gallery: [
+          { type: "img", src: "images/presse.webp",title: "presse " },
+          { type: "img", src: "images/balles4.webp",title: "Balles grade B Hiver " }
+        ],
       },
       "card-7": {
         download: "catalogues/catalogue_recyclage_original.pdf",
@@ -525,12 +682,9 @@
     gallery: [
       { type: "img", src: "images/enfants2.webp", title: "Extra summer cream" },
       { type: "img", src: "images/creme_extra.webp", title: "Extra summer cream T-shirt" },
-      { type: "img", src: "images/creme_chargee.webp", title: "Cream bales loading" },
-      { type: "img", src: "images/creme.webp", title: "Cream clothing before packing" },
+            { type: "img", src: "images/creme.webp", title: "Cream clothing before packing" },
       { type: "img", src: "images/rummage enfant.webp", title: "Extra summer cream kids" },
-      { type: "img", src: "images/installation-tri.webp", title: "Sorting facility" },
-      { type: "img", src: "images/conditionnement-service.webp", title: "Summer cream bales storage" },
-      { type: "video", src: "videos/chargement_original_big_bags.mp4", title: "Original big bags loading" },
+            { type: "video", src: "videos/chargement_original_big_bags.mp4", title: "Original big bags loading" },
     ],
   },
   "card-2": {
@@ -540,30 +694,49 @@
       { type: "img", src: "images/balles4.webp", title: "Winter bales" },
     ],
   },
-  "card-3": {
-    download: "catalogues/catalogue AMIRATEX.pdf",
-    gallery: [
-      { type: "img", src: "images/camion_ptte_balle_gradeA_B.webp", title: "Grade A summer loading" },
-    ],
-  },
-  "card-4": {
-    download: "catalogues/catalogue AMIRATEX.pdf",
-    gallery: [
-      { type: "img", src: "images/balles_stock.webp", title: "Grade A winter storage" },
-    ],
-  },
-  "card-5": {
-    download: "catalogues/CATALOGUE_GRADE_B_ETE_GLOBAL.pdf",
-    gallery: [
-      { type: "img", src: "images/balles2.webp", title: "Grade B summer stocks" },
-    ],
-  },
-  "card-6": {
-    download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
-    gallery: [
-      { type: "img", src: "images/balles4.webp", title: "Grade B winter bales" },
-    ],
-  },
+ "card-3": {
+
+  download: "catalogues/catalogue AMIRATEX.pdf",
+
+  gallery: [
+    { type: "img", src: "images/presse.webp", title: "Press" },
+    { type: "img", src: "images/camion_ptte_balle_gradeA_B.webp", title: "Grade A Summer Loading" },
+  ],
+
+},
+
+"card-4": {
+
+  download: "catalogues/catalogue AMIRATEX.pdf",
+
+  gallery: [
+    { type: "img", src: "images/presse.webp", title: "Press" },
+    { type: "img", src: "images/balles_stock.webp", title: "Grade A Winter Stock" }
+  ],
+
+},
+
+"card-5": {
+
+  download: "catalogues/CATALOGUE_GRADE_B_ETE_GLOBAL.pdf",
+
+  gallery: [
+    { type: "img", src: "images/presse.webp", title: "Press" },
+    { type: "img", src: "images/balles2.webp", title: "Grade B Summer Stock" }
+  ],
+
+},
+
+"card-6": {
+
+  download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
+
+  gallery: [
+    { type: "img", src: "images/presse.webp", title: "Press" },
+    { type: "img", src: "images/balles4.webp", title: "Grade B Winter Bales" }
+  ],
+
+},
   "card-7": {
     download: "catalogues/catalogue_recyclage_original.pdf",
     gallery: [
@@ -2146,18 +2319,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Contenu statique de détail pour les produits dans cette vue locale.
   // Il s'agit d'une source de données dédiée à cette section.
+  // Les traductions sont gérées par le script de langue principal.
+  // version non prise en compte voir la version bilingue( const detailproducts).
   const productData = {
     "card-1": {
       title: "Crème Été",
-      desc: "Sélection premium été haute qualité, idéale pour l’export international.",
+      desc: "une sélection premium de vêtements de seconde main soigneusement triés et contrôlés.Idéal pour les magasins de friperie, grossistes, revendeurs, boutiques en ligne et importateurs.",
       extra: `
         <h3>Caractéristiques principales :</h3>
         <ul>
           <li>Qualité supérieure triée à la main</li>
           <li>Vêtements légers et colorés d’été</li>
           <li>Parfait pour les marchés européens et africains</li>
-          <li>Conditionnement en balles compressées</li>
+          <li>Conditionnement en sacs de 25 kg ou en balles compressées de 45 kg</li>
           <li>Grandes quantités disponibles toute l’année</li>
+        </ul>
+        <h3>Commandes :</h3>
+        <ul>
+          <li>🇪🇺 EUROPE br</li>
+          <li>Possibilité de mélanger les catégories et les saisons</li>
+          <li>Livraison rapide et fiable</li>
         </ul>
       `,
       download: "catalogues/CATALOGUE_CREME_ETE.pdf",
@@ -2190,64 +2371,71 @@ document.addEventListener("DOMContentLoaded", function () {
         {type: "img", src: "images/creme_extra.webp"},
       ]
     },
-    "card-3": {
-      title: "Grade A - Été",
-      desc: "Vêtements Grade A été de haute qualité destinés à l’export.",
-      extra: `
-        <h3>Caractéristiques :</h3>
-        <ul>
-          <li>Qualité Grade A (très bon état)</li>
-          <li>Trié par catégorie et par saison</li>
-          <li>Excellente réputation sur le marché international</li>
-          <li>Chargements complets disponibles</li>
-        </ul>
-      `,
-      download: "catalogues/catalogue AMIRATEX.pdf",
-      gallery: [{type: "img", src: "images/tri-service.webp"}]
-    },
-    "card-4": {
-      title: "Grade A - Hiver",
-      desc: "Sélection hiver Grade A premium pour l’export.",
-      extra: `
-        <h3>Caractéristiques :</h3>
-        <ul>
-          <li>Vêtements chauds de qualité Grade A</li>
-          <li>Tri professionnel et contrôle qualité strict</li>
-          <li>Adapté aux marchés exigeants</li>
-        </ul>
-      `,
-      download: "catalogues/catalogue AMIRATEX.pdf",
-      gallery: [{type: "img", src: "images/balles_stock.webp"}]
-    },
-    "card-5": {
-      title: "Grade B - Été",
-      desc: "Articles Grade B été à excellent rapport qualité/prix.",
-      extra: `
-        <h3>Caractéristiques :</h3>
-        <ul>
-          <li>Bon rapport qualité/prix</li>
-          <li>Qualité correcte et propre</li>
-          <li>Idéal pour les marchés émergents</li>
-          <li>Volumes importants disponibles</li>
-        </ul>
-      `,
-      download: "catalogues/CATALOGUE_GRADE_B_ETE_GLOBAL.pdf",
-      gallery: [{type: "img", src: "images/balles2.webp"}]
-    },
-    "card-6": {
-      title: "Grade B - Hiver",
-      desc: "Produits hiver Grade B triés pour l’export.",
-      extra: `
-        <h3>Caractéristiques :</h3>
-        <ul>
-          <li>Vêtements d’hiver Grade B</li>
-          <li>Trié et nettoyé avec soin</li>
-          <li>Très bon rapport qualité/prix</li>
-        </ul>
-      `,
-      download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
-      gallery: [{type: "img", src: "images/balles4.webp"}]
-    },
+   "card-3": {
+  title: "Grade A - Été",
+  desc: "Vêtements Grade A été de haute qualité destinés à l’export.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li><strong>Prix : 2,00 € / kg</strong></li>
+      <li>Qualité Grade A (très bon état)</li>
+      <li>Trié par catégorie et par saison</li>
+      <li>Excellente réputation sur le marché international</li>
+      <li>Chargements complets disponibles</li>
+    </ul>
+  `,
+  download: "catalogues/catalogue AMIRATEX.pdf",
+  gallery: [{type: "img", src: "images/tri-service.webp"}]
+},
+
+"card-4": {
+  title: "Grade A - Hiver",
+  desc: "Sélection hiver Grade A premium pour l’export.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li><strong>Prix : 2,00 € / kg</strong></li>
+      <li>Vêtements chauds de qualité Grade A</li>
+      <li>Tri professionnel et contrôle qualité strict</li>
+      <li>Adapté aux marchés exigeants</li>
+    </ul>
+  `,
+  download: "catalogues/catalogue AMIRATEX.pdf",
+  gallery: [{type: "img", src: "images/balles_stock.webp"}]
+},
+
+"card-5": {
+  title: "Grade B - Été",
+  desc: "Articles Grade B été à excellent rapport qualité/prix.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li><strong>Prix : 0,90 € / kg</strong></li>
+      <li>Bon rapport qualité/prix</li>
+      <li>Qualité correcte et propre</li>
+      <li>Idéal pour les marchés émergents</li>
+      <li>Volumes importants disponibles</li>
+    </ul>
+  `,
+  download: "catalogues/CATALOGUE_GRADE_B_ETE_GLOBAL.pdf",
+  gallery: [{type: "img", src: "images/balles2.webp"}]
+},
+
+"card-6": {
+  title: "Grade B - Hiver",
+  desc: "Produits hiver Grade B triés pour l’export.",
+  extra: `
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li><strong>Prix : 0,90 € / kg</strong></li>
+      <li>Vêtements d’hiver Grade B</li>
+      <li>Trié et nettoyé avec soin</li>
+      <li>Très bon rapport qualité/prix</li>
+    </ul>
+  `,
+  download: "catalogues/CATALOGUES_CREME_GRADEB.pdf",
+  gallery: [{type: "img", src: "images/balles4.webp"}]
+},
     "card-7": {
       title: "Original Camion 18T",
       desc: "Lot original non trié en chargement complet de camion.",
