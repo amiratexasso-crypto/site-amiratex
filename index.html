@@ -77,10 +77,10 @@
 
         <nav class="nav-links" id="nav-links">
           <a href="#home">Accueil</a>
-          <a href="#about">Société</a>
-          <a href="#nos-produits">Produits</a>
+          <a href="#about">Notre Société</a>
+          <a href="#nos-produits">Nos Produits</a>
           <a href="#process">Logistique</a>
-          <a href="#catalogues">Catalogues</a>
+
           <a href="#gallery">Galerie</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -267,6 +267,154 @@
           </div>
         </div>
       </section>
+      <!-- section carte mondiale -->
+      <section class="amiratex-net-section">
+        <h2 class="amiratex-net-title">
+          Réseau d'Approvisionnement & Exportation Mondiale
+        </h2>
+        <p class="amiratex-net-subtitle">
+          Survolez une région ou cliquez sur les boutons ci-dessous pour plus de
+          détails.
+        </p>
+
+        <!-- Légende -->
+        <div class="amiratex-net-legend">
+          <div class="amiratex-net-legend-item">
+            <span class="amiratex-net-dot europe"></span> Collecte & Sourcing
+            Européen
+          </div>
+          <div class="amiratex-net-legend-item">
+            <span class="amiratex-net-dot export"></span> Destinations
+            d'Exportation Mondiale
+          </div>
+        </div>
+
+        <!-- Carte SVG Fonctionnelle -->
+        <div class="amiratex-map-container">
+          <div class="amiratex-map-header">
+            <span class="amiratex-map-kicker">AMIRATEX / GLOBAL FLOW</span>
+            <span class="amiratex-map-status"><i></i> Réseau actif</span>
+          </div>
+          <svg
+            class="amiratex-svg-map"
+            viewBox="0 0 1000 520"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-labelledby="amiratexMapTitle amiratexMapDesc"
+          >
+            <image
+              class="amiratex-real-map"
+              href="images/world-map.svg"
+              x="0"
+              y="6"
+              width="1000"
+              height="507"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden="true"
+            />
+            <g class="amiratex-map-routes" aria-hidden="true">
+              <!-- Routes depuis la France (hub Europe) -->
+              <path d="M 480 110 Q 340 70 200 110" />
+              <path d="M 480 110 Q 490 200 530 250" />
+              <path d="M 480 110 Q 650 90 700 170" />
+              <path d="M 480 110 Q 710 210 850 350" />
+              <path d="M 480 110 Q 360 230 300 300" />
+
+              <!-- Cercle Europe centré sur la France -->
+              <circle class="amiratex-france-marker" cx="480" cy="110" r="10" />
+
+              <!-- Destinations continents -->
+              <circle class="amiratex-dest" cx="200" cy="110" r="6" />
+              <!-- Amérique du Nord -->
+              <circle class="amiratex-dest" cx="300" cy="300" r="6" />
+              <!-- Amérique du Sud -->
+              <circle class="amiratex-dest" cx="530" cy="250" r="6" />
+              <!-- Afrique -->
+              <circle class="amiratex-dest" cx="700" cy="170" r="6" />
+              <!-- Asie -->
+              <circle class="amiratex-dest" cx="850" cy="350" r="6" />
+              <!-- Océanie -->
+            </g>
+
+            <!-- AMÉRIQUE DU NORD (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="north-america"
+              data-name="Amérique du Nord"
+              data-info="Exportation par conteneurs vers nos partenaires importateurs."
+              d="M 50 80 L 320 80 L 300 240 L 180 250 L 50 180 Z"
+            />
+
+            <!-- AMÉRIQUE DU SUD (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="south-america"
+              data-name="Amérique du Sud"
+              data-info="Expédition et approvisionnement en textiles et friperie."
+              d="M 250 220 L 380 220 L 300 480 L 220 400 Z"
+            />
+
+            <!-- EUROPE (Collecte & Sourcing) -->
+            <path
+              class="amiratex-region zone-europe"
+              data-region-key="europe"
+              data-name="Europe"
+              data-info="Suivi complet de la collecte, du tri et du sourcing de textiles recyclés."
+              d="M 440 50 L 580 50 L 570 140 L 450 140 Z"
+            />
+
+            <!-- AFRIQUE (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="africa"
+              data-name="Afrique"
+              data-info="Exportation régulière de vêtements triés, balles textiles et articles recyclés."
+              d="M 400 150 L 600 150 L 575 415 L 420 425 Z"
+            />
+
+            <!-- ASIE & MOYEN-ORIENT (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="asia"
+              data-name="Asie & Moyen-Orient"
+              data-info="Fourniture et livraison de conteneurs pour marchés industriels et commerciaux."
+              d="M 605 60 L 950 60 L 900 320 L 605 240 Z"
+            />
+
+            <!-- OCÉANIE (Export) -->
+            <path
+              class="amiratex-region zone-export"
+              data-region-key="oceania"
+              data-name="Océanie"
+              data-info="Exportation et distribution internationale sur demande."
+              d="M 800 340 L 950 340 L 920 460 L 780 440 Z"
+            />
+          </svg>
+
+          <!-- Zone d'affichage du texte -->
+          <div class="amiratex-infobox" id="amiratexInfoBox">
+            Survolez une région ou cliquez sur un bouton ci-dessous.
+          </div>
+        </div>
+
+        <!-- Boutons d'accès rapide -->
+        <div class="amiratex-buttons">
+          <button class="amiratex-btn" data-region="europe">
+            🇪🇺 Europe (Collecte)
+          </button>
+          <button class="amiratex-btn" data-region="africa">
+            🌍 Afrique (Export)
+          </button>
+          <button class="amiratex-btn" data-region="asia">
+            🌏 Asie & Moyen-Orient (Export)
+          </button>
+          <button class="amiratex-btn" data-region="north-america">
+            🌎 Amériques (Export)
+          </button>
+        </div>
+      </section>
+
       <!-- STATS: chiffres clés (après About) -->
       <section class="stats" id="stats">
         <div class="container">
@@ -441,153 +589,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- section carte mondiale -->
-      <section class="amiratex-net-section">
-        <h2 class="amiratex-net-title">
-          Réseau d'Approvisionnement & Exportation Mondiale
-        </h2>
-        <p class="amiratex-net-subtitle">
-          Survolez une région ou cliquez sur les boutons ci-dessous pour plus de
-          détails.
-        </p>
-
-        <!-- Légende -->
-        <div class="amiratex-net-legend">
-          <div class="amiratex-net-legend-item">
-            <span class="amiratex-net-dot europe"></span> Collecte & Sourcing
-            Européen
-          </div>
-          <div class="amiratex-net-legend-item">
-            <span class="amiratex-net-dot export"></span> Destinations
-            d'Exportation Mondiale
-          </div>
-        </div>
-
-        <!-- Carte SVG Fonctionnelle -->
-        <div class="amiratex-map-container">
-          <div class="amiratex-map-header">
-            <span class="amiratex-map-kicker">AMIRATEX / GLOBAL FLOW</span>
-            <span class="amiratex-map-status"><i></i> Réseau actif</span>
-          </div>
-          <svg
-            class="amiratex-svg-map"
-            viewBox="0 0 1000 520"
-            preserveAspectRatio="xMidYMid meet"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-labelledby="amiratexMapTitle amiratexMapDesc"
-          >
-            <image
-              class="amiratex-real-map"
-              href="images/world-map.svg"
-              x="0"
-              y="6"
-              width="1000"
-              height="507"
-              preserveAspectRatio="xMidYMid meet"
-              aria-hidden="true"
-            />
-            <g class="amiratex-map-routes" aria-hidden="true">
-              <!-- Routes depuis la France (hub Europe) -->
-              <path d="M 480 110 Q 340 70 200 110" />
-              <path d="M 480 110 Q 490 200 530 250" />
-              <path d="M 480 110 Q 650 90 700 170" />
-              <path d="M 480 110 Q 710 210 850 350" />
-              <path d="M 480 110 Q 360 230 300 300" />
-
-              <!-- Cercle Europe centré sur la France -->
-              <circle class="amiratex-france-marker" cx="480" cy="110" r="10" />
-
-              <!-- Destinations continents -->
-              <circle class="amiratex-dest" cx="200" cy="110" r="6" />
-              <!-- Amérique du Nord -->
-              <circle class="amiratex-dest" cx="300" cy="300" r="6" />
-              <!-- Amérique du Sud -->
-              <circle class="amiratex-dest" cx="530" cy="250" r="6" />
-              <!-- Afrique -->
-              <circle class="amiratex-dest" cx="700" cy="170" r="6" />
-              <!-- Asie -->
-              <circle class="amiratex-dest" cx="850" cy="350" r="6" />
-              <!-- Océanie -->
-            </g>
-
-            <!-- AMÉRIQUE DU NORD (Export) -->
-            <path
-              class="amiratex-region zone-export"
-              data-region-key="north-america"
-              data-name="Amérique du Nord"
-              data-info="Exportation par conteneurs vers nos partenaires importateurs."
-              d="M 50 80 L 320 80 L 300 240 L 180 250 L 50 180 Z"
-            />
-
-            <!-- AMÉRIQUE DU SUD (Export) -->
-            <path
-              class="amiratex-region zone-export"
-              data-region-key="south-america"
-              data-name="Amérique du Sud"
-              data-info="Expédition et approvisionnement en textiles et friperie."
-              d="M 250 220 L 380 220 L 300 480 L 220 400 Z"
-            />
-
-            <!-- EUROPE (Collecte & Sourcing) -->
-            <path
-              class="amiratex-region zone-europe"
-              data-region-key="europe"
-              data-name="Europe"
-              data-info="Suivi complet de la collecte, du tri et du sourcing de textiles recyclés."
-              d="M 440 50 L 580 50 L 570 140 L 450 140 Z"
-            />
-
-            <!-- AFRIQUE (Export) -->
-            <path
-              class="amiratex-region zone-export"
-              data-region-key="africa"
-              data-name="Afrique"
-              data-info="Exportation régulière de vêtements triés, balles textiles et articles recyclés."
-              d="M 400 150 L 600 150 L 575 415 L 420 425 Z"
-            />
-
-            <!-- ASIE & MOYEN-ORIENT (Export) -->
-            <path
-              class="amiratex-region zone-export"
-              data-region-key="asia"
-              data-name="Asie & Moyen-Orient"
-              data-info="Fourniture et livraison de conteneurs pour marchés industriels et commerciaux."
-              d="M 605 60 L 950 60 L 900 320 L 605 240 Z"
-            />
-
-            <!-- OCÉANIE (Export) -->
-            <path
-              class="amiratex-region zone-export"
-              data-region-key="oceania"
-              data-name="Océanie"
-              data-info="Exportation et distribution internationale sur demande."
-              d="M 800 340 L 950 340 L 920 460 L 780 440 Z"
-            />
-          </svg>
-
-          <!-- Zone d'affichage du texte -->
-          <div class="amiratex-infobox" id="amiratexInfoBox">
-            Survolez une région ou cliquez sur un bouton ci-dessous.
-          </div>
-        </div>
-
-        <!-- Boutons d'accès rapide -->
-        <div class="amiratex-buttons">
-          <button class="amiratex-btn" data-region="europe">
-            🇪🇺 Europe (Collecte)
-          </button>
-          <button class="amiratex-btn" data-region="africa">
-            🌍 Afrique (Export)
-          </button>
-          <button class="amiratex-btn" data-region="asia">
-            🌏 Asie & Moyen-Orient (Export)
-          </button>
-          <button class="amiratex-btn" data-region="north-america">
-            🌎 Amériques (Export)
-          </button>
         </div>
       </section>
 
@@ -1282,9 +1283,11 @@
           <div class="footer-col">
             <h3>Navigation</h3>
             <a href="#home">Accueil</a>
-            <a href="#about">Société</a>
-            <a href="#nos-produits">Produits</a>
-            <a href="#nos-produits">Catalogues</a>
+            <a href="#about">Notre Société</a>
+            <a href="#nos-produits">Nos Produits</a>
+            <a href="#process">Logistique</a>
+
+            <a href="#gallery">Galerie</a>
             <a href="#contact">Contact</a>
           </div>
 

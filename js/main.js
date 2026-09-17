@@ -628,7 +628,7 @@ en: {
           { type: "img", src: "images/original_chargement_small_bags.webp",title: "original chargement small bags " },
           { type: "img", src: "images/camion_big_bags.webp",title: "Chargement original big bags " },
           { type: "video", src: "videos/chargement_original_big_bags.mp4",title: "Chargement original big bags " },
-          { type: "video", src: "videos/original_big_bags.mp4",title: "stocks original big bags " }
+          { type: "video", src: "videos/video_stock_original.mp4",title: "stocks original big bags " }
         ],
       },
       "card-8": {
@@ -749,7 +749,7 @@ en: {
       { type: "img", src: "images/original_chargement_small_bags.webp", title: "Original small bags loading" },
       { type: "img", src: "images/camion_big_bags.webp", title: "Original big bags loading" },
       { type: "video", src: "videos/chargement_original_big_bags.mp4", title: "Original big bags loading" },
-      { type: "video", src: "videos/original_big_bags.mp4", title: "Original big bags stock" },
+      { type: "video", src: "videos/video_stock_original.mp4", title: "Original big bags stock" },
     ],
   },
   "card-8": {
@@ -807,7 +807,7 @@ en: {
     description: "AMIRATEX est spécialisée dans la collecte, le tri et l’exportation internationale de textiles de seconde main.",
     menuOpen: "Ouvrir le menu",
     menuClose: "Fermer le menu",
-    nav: ["Accueil", "Société", "Produits", "Logistique", "Catalogues", "Galerie", "Contact"],
+    nav: ["Accueil", "Notre Société", "Nos Produits", "Logistique", "Galerie", "Contact"],
     heroSubtitle: "COLLECTE • TRI • EXPORT TEXTILE INTERNATIONAL",
     heroText: "Votre partenaire professionnel pour le tri, la valorisation et l’exportation de vêtements et textiles de seconde main.",
     heroButtons: ["Découvrir nos produits", "Télécharger nos catalogues"],
@@ -1005,7 +1005,7 @@ requestQuote: "Demander un devis"
     description: "AMIRATEX specializes in the collection, sorting and international export of second-hand textiles.",
     menuOpen: "Open menu",
     menuClose: "Close menu",
-    nav: ["Home", "Company", "Products", "Logistics", "Catalogues", "Gallery", "Contact"],
+    nav: ["Home", "OUR COMPANY", "Our Products", "Logistics", "Gallery", "Contact"],
     heroSubtitle: "TEXTILE COLLECTION • SORTING • INTERNATIONAL EXPORT",
     heroText: "Your professional partner for sorting, valorizing and exporting second-hand clothing and textiles.",
     heroButtons: ["Discover our products", "Download our catalogues"],
@@ -1416,7 +1416,11 @@ if (Array.isArray(t.galleryTitles)) {
     // Footer.
     setText(".footer-col:nth-child(1) p", t.footerBaseline);
     setText(".footer-col:nth-child(2) h3", t.nav[0] === "Home" ? "Navigation" : "Navigation");
-    setAll(".footer-col:nth-child(2) a", [t.nav[0], t.nav[1], t.nav[2], t.nav[4], t.nav[6]]);
+    // Conserver exactement les mêmes six entrées, dans le même ordre,
+    // que la navigation principale. Auparavant, seuls quatre libellés
+    // étaient fournis : les deux derniers liens répétaient donc Accueil et
+    // Notre Société après un changement de langue.
+    setAll(".footer-col:nth-child(2) a", t.nav);
     setText(".footer-col:nth-child(4) h3", t.social);
     setText(".footer-bottom", t.copyright);
 
