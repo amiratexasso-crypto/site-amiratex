@@ -911,7 +911,7 @@ aboutText2: "Nos marchandises sont commercialisées exclusivement <strong>par co
       ["4. Expédition", "Logistique internationale sécurisée."]
     ],
     logisticsTitle: "Solution Logistique Internationale",
-    logisticsText: "AMIRATEX collabore avec des transporteurs internationaux afin de garantir des expéditions rapides et fiables. Nous nous occupons de toutes les démarches de transport : chargement, documentation, logistique export et suivi des expéditions jusqu’à destination.",
+    logisticsText: "AMIRATEX collabore avec des transporteurs internationaux afin de garantir des expéditions rapides, fiables et sécurisées.Nous prenons en charge l’ensemble des démarches liées au transport et à la logistique : chargement, documentation, formalités d’exportation, organisation logistique et suivi des expéditions jusqu’à leur destination.<br/><strong>Prise en charge administrative complète</strong> : AMIRATEX fournit l’ensemble des documents d’exportation ainsi que les certificats spécifiques requis par les autorités et les ports de destination.",
     logisticsButtons: ["Demander une expédition", "Télécharger nos catalogues"],
     productsBadge: "AMIRATEX PRODUITS",
     productsTitle: "NOS PRODUITS TEXTILES DESTINÉS À L’EXPORT",
@@ -1069,7 +1069,7 @@ requestQuote: "Demander un devis"
       ["4. Shipping", "Secure international logistics."]
     ],
     logisticsTitle: "International Logistics Solution",
-    logisticsText: "AMIRATEX works with international carriers to ensure fast and reliable shipments. We handle transport operations: loading, documentation, export logistics and shipment tracking through to destination.",
+    logisticsText: "AMIRATEX works with international carriers to ensure fast, reliable, and secure shipments. We handle all transport and logistics procedures, including loading, documentation, export formalities, logistics coordination, and shipment tracking all the way to the final destination.<br/><strong>Complete Administrative Support</strong>: AMIRATEX provides all required export documents, as well as any specific certificates required by the relevant authorities and destination ports.",
     logisticsButtons: ["Request a shipment", "Download our catalogues"],
     productsBadge: "AMIRATEX PRODUCTS",
     productsTitle: "TEXTILE PRODUCTS FOR EXPORT",
@@ -1345,7 +1345,7 @@ setText("#about-process-title", t.aboutProcessTitle);
 
     // Section logistique.
     setText(".combined-logistic h3", t.logisticsTitle);
-    setText(".combined-logistic .logistic-text", t.logisticsText);
+    document.querySelector(".combined-logistic .logistic-text").innerHTML = t.logisticsText;
     setAll(".combined-logistic .btn-group a", t.logisticsButtons);
 
     // Section produits.

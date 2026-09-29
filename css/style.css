@@ -351,6 +351,7 @@ html {
       section {
         padding: 100px 0;
       }
+      
 
       .section-title {
         text-align: center;
@@ -1978,7 +1979,7 @@ body[data-lang="en"] .mini-product::after {
       .logistic-text {
         color: #d5d5d5;
         font-size: 17px;
-        max-width: 900px;
+        max-width: 90%;
         margin-bottom: 30px;
       }
 
@@ -3644,6 +3645,28 @@ body.lightbox-open #lightbox {
     margin:0;
 }
 
+/* Seul ce paragraphe s'étend sous les deux images. */
+#about .layout-img:first-child {
+    grid-column:1;
+    grid-row:1;
+}
+
+#about .text-middle {
+    grid-column:2;
+    grid-row:1;
+}
+
+#about-text-2 {
+    grid-column:1 / -1;
+    grid-row:2;
+    text-align:center;
+}
+
+#about .layout-img.layout-img-map {
+    grid-column:3;
+    grid-row:1;
+}
+
 #about .reveal {
     opacity:1;
     transform:none;
@@ -3659,12 +3682,37 @@ body.lightbox-open #lightbox {
     border-radius:18px;
     box-shadow:0 20px 55px rgba(0,0,0,.08);
     justify-self:center;
-}
-
-#about .layout-img-map {
     background:#fff;
 }
 
+/*#about .layout-img-map {
+    background:#fff;
+}*/
+/* Titre principal de la section À propos */
+#about-main-title {
+  text-align: center;
+  white-space: nowrap;          /* empêche le retour à la ligne */
+  overflow: visible;
+  font-size: clamp(1.5rem, 3.8vw, 2.6rem); /* s’adapte à la largeur d’écran */
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  line-height: 1.2;
+}
+
+/* Titre "AMIRATEX, votre partenaire de confiance" */
+#about-trusted-title {
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
+  font-size: clamp(1.25rem, 3.2vw, 1.9rem);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  line-height: 1.2;
+}
 #about .text-middle {
     text-align:center;
     display:flex;
@@ -3711,6 +3759,8 @@ body.lightbox-open #lightbox {
 
     #about .layout-img,
     #about .layout-img-map {
+        grid-column:auto;
+        grid-row:auto;
         width:100%;
         height:auto;
         max-height:none;
@@ -3720,9 +3770,17 @@ body.lightbox-open #lightbox {
 
     #about .text-middle,
     #about .text-bottom {
+        grid-column:auto;
+        grid-row:auto;
         text-align:left;
         width:100%;
         padding:0 10px;
+    }
+
+    #about-text-2 {
+        grid-column:auto;
+        grid-row:auto;
+        text-align:left;
     }
 
     #about .text-middle {
@@ -3761,7 +3819,7 @@ body.lightbox-open #lightbox {
 
     color:#555;
 
-    font-size:18px;
+    font-size:15px;
 
     line-height:1.9;
 
