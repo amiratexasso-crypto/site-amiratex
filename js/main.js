@@ -1236,7 +1236,7 @@ copyright: "© 2026 AMIRATEX — All rights reserved.",
     setText(".hero p", t.heroText);
     setAll(".hero .buttons a", t.heroButtons);
 
-        // ====================== SECTION ABOUT (version avec IDs) ======================
+        // ====================== 04. SOCIÉTÉ / ABOUT ======================
         
     
 
@@ -1300,67 +1300,16 @@ setText("#about-process-title", t.aboutProcessTitle);
     setText("#timeline-sort-title", t.timelineSortTitle);
     setText("#timeline-sort-text", t.timelineSortText);
     setText("#timeline-control-title", t.timelineControlTitle);
-    setText("#timeline-control-text", t.timelineControlText);
-    setText("#timeline-export-title", t.timelineExportTitle);
-    setText("#timeline-export-text", t.timelineExportText);
+setText("#timeline-control-text", t.timelineControlText);
+setText("#timeline-export-title", t.timelineExportTitle);
+setText("#timeline-export-text", t.timelineExportText);
 
-    // Statistiques
-    setText("#stat-experience", t.statExperience);
-    setText("#stat-countries", t.statCountries);
-    setText("#stat-tons", t.statTons);
-    setText("#stat-quality", t.statQuality);
-
-    // Boutons
+    // Actions de la section Société.
     setText("#about-btn-products", t.aboutBtnProducts);
     setText("#about-btn-catalog", t.aboutBtnCatalog);
     setText("#about-btn-request", t.aboutBtnRequest);
-    //  les anciennes mises à jour 
-    //setText(".about-text h2", t.aboutTitle || t.Title);           // fallback
-    //setHtml(".about-text p:nth-of-type(1)", t.about1);
-    //setText(".about-text p:nth-of-type(2)", t.about2);
-    // Section services.
-    setText(".services-section > .container > .section-title .section-badge", t.servicesBadge);
-    setHtml(".services-section > .container > .section-title h2", t.servicesTitle);
-    setText(".services-section > .container > .section-title p", t.servicesIntro);
-    document.querySelectorAll(".service-card").forEach((card, index) => {
-      const data = t.services[index];
-      if (!data) return;
-      const title = card.querySelector("h3");
-      const paragraph = card.querySelector("p");
-      if (title) title.textContent = data[0];
-      if (paragraph) paragraph.textContent = data[1];
-    });
 
-    // Section processus.
-    setText(".process-panel .section-title h2", t.processTitle);
-    setText(".process-panel .section-title p", t.processIntro);
-    document.querySelectorAll(".process-steps .step").forEach((step, index) => {
-      const data = t.steps[index];
-      if (!data) return;
-      const title = step.querySelector("h3");
-      const paragraph = step.querySelector("p");
-      if (title) title.textContent = data[0];
-      if (paragraph) paragraph.textContent = data[1];
-    });
-
-    // Section logistique.
-    setText(".combined-logistic h3", t.logisticsTitle);
-    document.querySelector(".combined-logistic .logistic-text").innerHTML = t.logisticsText;
-    setAll(".combined-logistic .btn-group a", t.logisticsButtons);
-
-    // Section produits.
-    setText("#nos-produits .section-badge", t.productsBadge);
-    setText("#nos-produits .section-title h2", t.productsTitle);
-    setText("#nos-produits .section-title p", t.productsIntro);
-    setHtml(".slider-hint", t.sliderHint);
-    setText(".catalog-download-wrap .btn", t.catalogComplete);
-    document.querySelectorAll(".download-btn").forEach((btn) => {
-      btn.textContent = t.download;
-    });
-    setText("#loadMoreBtn", t.loadMore);
-    applyProductLabels(lang);
-
-    // Section réseau mondial.
+    // 05. RÉSEAU MONDIAL / GLOBAL NETWORK
     setText(".amiratex-net-title", t.mapSectionTitle);
     setText(".amiratex-net-subtitle", t.mapSectionSubtitle);
     const mapLegendItems = document.querySelectorAll(".amiratex-net-legend .amiratex-net-legend-item");
@@ -1384,21 +1333,69 @@ setText("#about-process-title", t.aboutProcessTitle);
       if (regionInfo) region.dataset.info = regionInfo;
     });
 
-    // Section galerie et statistiques.
+    // 06. CHIFFRES CLÉS / STATS
+    setText("#stat-experience", t.statExperience);
+    setText("#stat-countries", t.statCountries);
+    setText("#stat-tons", t.statTons);
+    setText("#stat-quality", t.statQuality);
+    setText("#stats-title", t.statsTitle);
+    setText("#stats-intro", t.statsIntro);
+    setAll(".stat-box p", t.stats);
+
+    // 07. SERVICES ET LOGISTIQUE / SERVICES AND LOGISTICS
+    setText(".services-section > .container > .section-title .section-badge", t.servicesBadge);
+    setHtml(".services-section > .container > .section-title h2", t.servicesTitle);
+    setText(".services-section > .container > .section-title p", t.servicesIntro);
+    document.querySelectorAll(".service-card").forEach((card, index) => {
+      const data = t.services[index];
+      if (!data) return;
+      const title = card.querySelector("h3");
+      const paragraph = card.querySelector("p");
+      if (title) title.textContent = data[0];
+      if (paragraph) paragraph.textContent = data[1];
+    });
+
+    // Sous-section : processus.
+    setText(".process-panel .section-title h2", t.processTitle);
+    setText(".process-panel .section-title p", t.processIntro);
+    document.querySelectorAll(".process-steps .step").forEach((step, index) => {
+      const data = t.steps[index];
+      if (!data) return;
+      const title = step.querySelector("h3");
+      const paragraph = step.querySelector("p");
+      if (title) title.textContent = data[0];
+      if (paragraph) paragraph.textContent = data[1];
+    });
+
+    // Sous-section : logistique.
+    setText(".combined-logistic h3", t.logisticsTitle);
+    document.querySelector(".combined-logistic .logistic-text").innerHTML = t.logisticsText;
+    setAll(".combined-logistic .btn-group a", t.logisticsButtons);
+
+    // 08. PRODUITS / PRODUCTS
+    setText("#nos-produits .section-badge", t.productsBadge);
+    setText("#nos-produits .section-title h2", t.productsTitle);
+    setText("#nos-produits .section-title p", t.productsIntro);
+    setHtml(".slider-hint", t.sliderHint);
+    setText(".catalog-download-wrap .btn", t.catalogComplete);
+    document.querySelectorAll(".download-btn").forEach((btn) => {
+      btn.textContent = t.download;
+    });
+    setText("#loadMoreBtn", t.loadMore);
+    applyProductLabels(lang);
+
+    // 09. GALERIE / GALLERY
     setText("#gallery .section-title h2", t.galleryTitle);
     setText("#gallery .section-title p", t.galleryIntro);
-       setText("#stats-title", t.statsTitle);
-setText("#stats-intro", t.statsIntro);
-setAll(".stat-box p", t.stats);
-if (Array.isArray(t.galleryTitles)) {
-  document.querySelectorAll("#gallery .gallery-title").forEach((el, index) => {
-    if (t.galleryTitles[index]) el.textContent = t.galleryTitles[index];
-  });
-  document.querySelectorAll("#gallery .gallery-item").forEach((img, index) => {
-    if (t.galleryTitles[index]) img.alt = t.galleryTitles[index];
-  });
-}
-    // Section contact.
+    if (Array.isArray(t.galleryTitles)) {
+      document.querySelectorAll("#gallery .gallery-title").forEach((el, index) => {
+        if (t.galleryTitles[index]) el.textContent = t.galleryTitles[index];
+      });
+      document.querySelectorAll("#gallery .gallery-item").forEach((img, index) => {
+        if (t.galleryTitles[index]) img.alt = t.galleryTitles[index];
+      });
+    }
+    // 10. CONTACT
     setText(".contact .section-title h2", t.contactTitle);
     setText(".contact .section-title p", t.contactIntro);
     setText('label[for="name"]', t.form.name);
@@ -1413,7 +1410,7 @@ if (Array.isArray(t.galleryTitles)) {
     setAttr("#message", "placeholder", t.form.messagePlaceholder);
     setText("#contact-submit .btn-text", t.form.submit);
 
-    // Footer.
+    // 11. PIED DE PAGE / FOOTER
     setText(".footer-col:nth-child(1) p", t.footerBaseline);
     setText(".footer-col:nth-child(2) h3", t.nav[0] === "Home" ? "Navigation" : "Navigation");
     // Conserver exactement les mêmes six entrées, dans le même ordre,
