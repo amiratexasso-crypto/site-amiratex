@@ -295,30 +295,6 @@ html {
         display: inline-block;
       }
 
-      .btn-primary {
-        background: var(--primary);
-        color: white;
-      }
-
-      .btn-primary:hover {
-        background: blue;
-        transform: translateY(-3px);
-      }
-
-      .btn-secondary {
-        border: 2px solid white;
-        color: white;
-
-      }
-
-      .btn-secondary:hover {
-         transform:translateY(-4px);
-
-    box-shadow:0 25px 45px rgba(60,179,113,.40);
-    background: blue;
-
-      }
-
       /* ========================= */
       /* SLIDER BUTTONS */
       /* ========================= */
@@ -1326,16 +1302,6 @@ section.stats,
         color: #5c677d;
       }
 
-      .combined-logistic .btn-secondary {
-        border-color: #081c3a;
-        color: #081c3a;
-      }
-
-      .combined-logistic .btn-secondary:hover {
-        background: #081c3a;
-        color: #fff;
-      }
-
       /* ========================= */
       /* CARDS */
       /* ========================= */
@@ -1935,26 +1901,6 @@ body[data-lang="en"] .mini-product::after {
   overflow: hidden;
   margin-bottom: 40px;
 }
-/* Style pour le bouton "Demander un devis" */
-#detail-quote {
-  background-color: #2c3e50; /* Couleur de fond (ex: un bleu foncé / gris élégant) */
-  color: #ffffff;            /* Couleur du texte */
-  border: 2px solid #2c3e50; /* Bordure assortie */
-  padding: 10px 20px;        /* Espacement interne */
-  border-radius: 4px;        /* Coins légèrement arrondis */
-  font-weight: 600;          /* Texte semi-gras */
-  text-decoration: none;     /* Supprime le soulignement du lien */
-  transition: all 0.3s ease; /* Animation fluide au survol */
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* Effet au survol de la souris */
-#detail-quote:hover {
-  background-color: #1a252f; /* Fond un peu plus foncé */
-  border-color: #1a252f;
-  transform: translateY(-2px); /* Léger effet de relief vers le haut */
-}
 /* Layout: gallery left, content right. Keep gallery visible when scrolling. */
 .detail-content {
   display: grid;
@@ -2097,11 +2043,17 @@ body[data-lang="en"] .mini-product::after {
   margin-bottom: 20px;
   font-size: 32px;
 }
-#detail-download {
+#detail-download,
+#detail-quote {
   display: inline-block;
   margin: 40px auto 0 auto;
   padding: 14px 35px;
   font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  box-sizing: border-box;
 }
 .detail-body .desc {
   font-size: 18px;
@@ -3714,20 +3666,14 @@ body.lightbox-open #lightbox {
         padding: 14px 24px;
       }
 
-      .btn-primary,
       .btn-more {
-        background: var(--primary);
+        background: blue;
         box-shadow: 0 10px 24px rgba(47, 159, 103, 0.22);
+        border: 1px solid #081c3a;
       }
 
-      .btn-primary:hover,
       .btn-more:hover {
-        background: var(--primary-dark);
-      }
-
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.75);
+        background: var(--primary);
       }
 
       .slider-buttons {
@@ -4618,7 +4564,8 @@ align-items:center;
 
 }
 
-.btn-primary{
+.btn-primary,
+.btn-secondary{
 
     background:
 
@@ -4632,43 +4579,28 @@ align-items:center;
     box-shadow:
 
     0 18px 35px rgba(60,179,113,.30);
-
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 25px 45px rgba(60,179,113,.40);
-    background:blue;
-
-}
-
-.btn-secondary{
-
-   background:
-
-    linear-gradient(
-    135deg,
-    var(--primary),
-    #52c27d);
-
-    color:#fff;
-
-    box-shadow:
-
-    0 18px 35px rgba(60,179,113,.30);
+   
 
 }
 
 
 
 
+
+.btn-primary:hover,
 .btn-secondary:hover{
 
     transform:translateY(-4px);
 
-    box-shadow: 0 25px 45px rgba(60,179,113,.40);
+    box-shadow:0 25px 45px rgba(60,179,113,.40);
+
+    background:blue;
+
+}
+
+.combined-logistic .btn-secondary{
+
+    border-color:#081c3a;
 
 }
 /*==================================================
